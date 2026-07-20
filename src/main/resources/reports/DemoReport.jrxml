@@ -1900,7 +1900,7 @@
 	</field>
 	<background splitType="Stretch"/>
 	<title height="336" splitType="Stretch">
-		<element kind="staticText" uuid="0be42b8a-2c23-45d7-80ce-06a455684820" x="0" y="10" width="560" height="80" fontName="IDLC" hTextAlign="Justified">
+		<element kind="staticText" uuid="0be42b8a-2c23-45d7-80ce-06a455684820" x="0" y="10" width="560" height="80" fontName="SansSerif" hTextAlign="Justified">
 			<text><![CDATA[Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.]]></text>
 		</element>
 		<element kind="component" uuid="497bb0e9-da3d-4f2b-ad13-f9384a265838" stretchType="ElementGroupHeight" x="0" y="109" width="557" height="100">
@@ -1913,18 +1913,18 @@
 				</datasetRun>
 				<column kind="single" uuid="5b3a37de-5643-4818-8b04-e847af17aa53" width="80">
 					<tableHeader height="30" rowSpan="1" style="Table 1_TH">
-						<element kind="staticText" uuid="6481e2bd-e564-40cb-b6ea-eb43cf5f5441" x="0" y="0" width="80" height="30" fontName="IDLC" hTextAlign="Center" vTextAlign="Middle">
+						<element kind="staticText" uuid="6481e2bd-e564-40cb-b6ea-eb43cf5f5441" x="0" y="0" width="80" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
 							<text><![CDATA[Sample Table]]></text>
 						</element>
 					</tableHeader>
 					<columnHeader height="30" rowSpan="1" style="Table 1_CH">
-						<element kind="staticText" uuid="ef0f1fc6-5866-44b4-95fd-7216377734da" x="0" y="0" width="80" height="30" fontName="IDLC" hTextAlign="Center" vTextAlign="Middle">
+						<element kind="staticText" uuid="ef0f1fc6-5866-44b4-95fd-7216377734da" x="0" y="0" width="80" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
 							<text><![CDATA[ProspectID]]></text>
 							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 						</element>
 					</columnHeader>
 					<detailCell height="30" style="Table 1_TD">
-						<element kind="textField" uuid="b46016c8-f41f-4412-a6a3-15bdf1a48ff9" x="0" y="0" width="80" height="30" fontName="IDLC" hTextAlign="Center" vTextAlign="Middle">
+						<element kind="textField" uuid="b46016c8-f41f-4412-a6a3-15bdf1a48ff9" x="0" y="0" width="80" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
 							<expression><![CDATA[$F{ProspectID}]]></expression>
 						</element>
 					</detailCell>
@@ -1933,12 +1933,12 @@
 				<column kind="single" uuid="c93e064a-a19d-4b83-82da-b8c64a936f2f" width="90">
 					<tableHeader height="30" rowSpan="1" style="Table 1_TH"/>
 					<columnHeader height="30" rowSpan="1" style="Table 1_CH">
-						<element kind="staticText" uuid="27c08c87-72af-40a4-be6b-e836d7a2c9b8" x="0" y="0" width="90" height="30" fontName="IDLC" hTextAlign="Center" vTextAlign="Middle">
+						<element kind="staticText" uuid="27c08c87-72af-40a4-be6b-e836d7a2c9b8" x="0" y="0" width="90" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
 							<text><![CDATA[LeadReferenceNo]]></text>
 						</element>
 					</columnHeader>
 					<detailCell height="30" style="Table 1_TD">
-						<element kind="textField" uuid="2de65a09-cde2-4489-a5e2-8af51260b884" x="0" y="0" width="90" height="30" fontName="IDLC" hTextAlign="Center" vTextAlign="Middle">
+						<element kind="textField" uuid="2de65a09-cde2-4489-a5e2-8af51260b884" x="0" y="0" width="90" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
 							<expression><![CDATA[$F{LeadReferenceNo}]]></expression>
 						</element>
 					</detailCell>
@@ -1947,12 +1947,12 @@
 				<column kind="single" uuid="8d8e243c-fccf-4060-9e1d-42c1d5707ccf" width="80">
 					<tableHeader height="30" rowSpan="1" style="Table 1_TH"/>
 					<columnHeader height="30" rowSpan="1" style="Table 1_CH">
-						<element kind="staticText" uuid="2ade8294-472c-4544-8626-309232e245b9" x="0" y="0" width="80" height="30" fontName="IDLC" hTextAlign="Center" vTextAlign="Middle">
+						<element kind="staticText" uuid="2ade8294-472c-4544-8626-309232e245b9" x="0" y="0" width="80" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
 							<text><![CDATA[EntryBy]]></text>
 						</element>
 					</columnHeader>
 					<detailCell height="30" style="Table 1_TD">
-						<element kind="textField" uuid="f7e3b585-15b5-4e75-91e8-2506c3c1975a" x="0" y="0" width="80" height="30" fontName="IDLC" hTextAlign="Center" vTextAlign="Middle">
+						<element kind="textField" uuid="f7e3b585-15b5-4e75-91e8-2506c3c1975a" x="0" y="0" width="80" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
 							<expression><![CDATA[$F{EntryBy}]]></expression>
 						</element>
 					</detailCell>
@@ -1961,12 +1961,12 @@
 				<column kind="single" uuid="bdc9cfac-3036-499d-a730-c030bc7c94b1" width="110">
 					<tableHeader height="30" rowSpan="1" style="Table 1_TH"/>
 					<columnHeader height="30" rowSpan="1" style="Table 1_CH">
-						<element kind="staticText" uuid="7f4ada1d-0996-41a0-b41e-e064c128e5df" x="0" y="0" width="110" height="30" fontName="IDLC" hTextAlign="Center" vTextAlign="Middle">
+						<element kind="staticText" uuid="7f4ada1d-0996-41a0-b41e-e064c128e5df" x="0" y="0" width="110" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
 							<text><![CDATA[RelationshipwithIDLC]]></text>
 						</element>
 					</columnHeader>
 					<detailCell height="30" style="Table 1_TD">
-						<element kind="textField" uuid="29b55d6b-4bda-4856-a2c4-649dc23f02fc" x="0" y="0" width="110" height="30" fontName="IDLC" hTextAlign="Center" vTextAlign="Middle">
+						<element kind="textField" uuid="29b55d6b-4bda-4856-a2c4-649dc23f02fc" x="0" y="0" width="110" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
 							<expression><![CDATA[$F{RelationshipwithIDLC}]]></expression>
 						</element>
 					</detailCell>
@@ -1978,7 +1978,7 @@
 			<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
 			<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
 		</element>
-		<element kind="staticText" uuid="200af28f-f58f-43a2-a64d-c2f9b0f257b2" x="0" y="256" width="560" height="80" fontName="IDLC" hTextAlign="Justified">
+		<element kind="staticText" uuid="200af28f-f58f-43a2-a64d-c2f9b0f257b2" x="0" y="256" width="560" height="80" fontName="SansSerif" hTextAlign="Justified">
 			<text><![CDATA[Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.]]></text>
 		</element>
 	</title>
