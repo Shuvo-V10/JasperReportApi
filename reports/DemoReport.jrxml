@@ -1,0 +1,1987 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="demo" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="17575a41-350a-4265-a3ce-060a24500c38">
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="468"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="521"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MSSQL_Andromeda"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<dataset name="TableDataSet" uuid="f0440532-0e3c-490b-98f5-d30ada8adc07">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MSSQL_Andromeda"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<parameter name="ReferenceNo" class="java.lang.String"/>
+		<query language="SQL"><![CDATA[{call udspCrp_QryProspectInfoByReferenceNo($P{ReferenceNo})}]]></query>
+		<field name="ProspectID" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="ProspectID"/>
+			<property name="com.jaspersoft.studio.field.label" value="ProspectID"/>
+		</field>
+		<field name="LeadReferenceNo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="LeadReferenceNo"/>
+			<property name="com.jaspersoft.studio.field.label" value="LeadReferenceNo"/>
+		</field>
+		<field name="EntryBy" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="EntryBy"/>
+			<property name="com.jaspersoft.studio.field.label" value="EntryBy"/>
+		</field>
+		<field name="RelationshipwithIDLC" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="RelationshipwithIDLC"/>
+			<property name="com.jaspersoft.studio.field.label" value="RelationshipwithIDLC"/>
+		</field>
+		<field name="RequestDate" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="RequestDate"/>
+			<property name="com.jaspersoft.studio.field.label" value="RequestDate"/>
+		</field>
+		<field name="CustomerNo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="CustomerNo"/>
+			<property name="com.jaspersoft.studio.field.label" value="CustomerNo"/>
+		</field>
+		<field name="ProspectName" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ProspectName"/>
+			<property name="com.jaspersoft.studio.field.label" value="ProspectName"/>
+		</field>
+		<field name="Type" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Type"/>
+			<property name="com.jaspersoft.studio.field.label" value="Type"/>
+		</field>
+		<field name="ProspectIndexID" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="ProspectIndexID"/>
+			<property name="com.jaspersoft.studio.field.label" value="ProspectIndexID"/>
+		</field>
+		<field name="Address" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Address"/>
+			<property name="com.jaspersoft.studio.field.label" value="Address"/>
+		</field>
+		<field name="HouseName" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="HouseName"/>
+			<property name="com.jaspersoft.studio.field.label" value="HouseName"/>
+		</field>
+		<field name="ApartmentNo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ApartmentNo"/>
+			<property name="com.jaspersoft.studio.field.label" value="ApartmentNo"/>
+		</field>
+		<field name="HoldingNumber" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="HoldingNumber"/>
+			<property name="com.jaspersoft.studio.field.label" value="HoldingNumber"/>
+		</field>
+		<field name="Road" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Road"/>
+			<property name="com.jaspersoft.studio.field.label" value="Road"/>
+		</field>
+		<field name="Floor" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Floor"/>
+			<property name="com.jaspersoft.studio.field.label" value="Floor"/>
+		</field>
+		<field name="PO" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="PO"/>
+			<property name="com.jaspersoft.studio.field.label" value="PO"/>
+		</field>
+		<field name="PS" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="PS"/>
+			<property name="com.jaspersoft.studio.field.label" value="PS"/>
+		</field>
+		<field name="City" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="City"/>
+			<property name="com.jaspersoft.studio.field.label" value="City"/>
+		</field>
+		<field name="Country" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Country"/>
+			<property name="com.jaspersoft.studio.field.label" value="Country"/>
+		</field>
+		<field name="Branch" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Branch"/>
+			<property name="com.jaspersoft.studio.field.label" value="Branch"/>
+		</field>
+		<field name="BranchCode" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="BranchCode"/>
+			<property name="com.jaspersoft.studio.field.label" value="BranchCode"/>
+		</field>
+		<field name="ProposedAmount" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="ProposedAmount"/>
+			<property name="com.jaspersoft.studio.field.label" value="ProposedAmount"/>
+		</field>
+		<field name="AmountRequestedFrom" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="AmountRequestedFrom"/>
+			<property name="com.jaspersoft.studio.field.label" value="AmountRequestedFrom"/>
+		</field>
+		<field name="SanctionAmount" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="SanctionAmount"/>
+			<property name="com.jaspersoft.studio.field.label" value="SanctionAmount"/>
+		</field>
+		<field name="EMI" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="EMI"/>
+			<property name="com.jaspersoft.studio.field.label" value="EMI"/>
+		</field>
+		<field name="InterestRate" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="InterestRate"/>
+			<property name="com.jaspersoft.studio.field.label" value="InterestRate"/>
+		</field>
+		<field name="TermInMonth" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="TermInMonth"/>
+			<property name="com.jaspersoft.studio.field.label" value="TermInMonth"/>
+		</field>
+		<field name="Periodicity" class="java.lang.Short">
+			<property name="com.jaspersoft.studio.field.name" value="Periodicity"/>
+			<property name="com.jaspersoft.studio.field.label" value="Periodicity"/>
+		</field>
+		<field name="Product" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Product"/>
+			<property name="com.jaspersoft.studio.field.label" value="Product"/>
+		</field>
+		<field name="ForcastedDecrease" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="ForcastedDecrease"/>
+			<property name="com.jaspersoft.studio.field.label" value="ForcastedDecrease"/>
+		</field>
+		<field name="ForcastedIncrease" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="ForcastedIncrease"/>
+			<property name="com.jaspersoft.studio.field.label" value="ForcastedIncrease"/>
+		</field>
+		<field name="FullTimeEmployees" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="FullTimeEmployees"/>
+			<property name="com.jaspersoft.studio.field.label" value="FullTimeEmployees"/>
+		</field>
+		<field name="MenEmployees" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="MenEmployees"/>
+			<property name="com.jaspersoft.studio.field.label" value="MenEmployees"/>
+		</field>
+		<field name="WomenEmployees" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="WomenEmployees"/>
+			<property name="com.jaspersoft.studio.field.label" value="WomenEmployees"/>
+		</field>
+		<field name="PartTimeEmployees" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="PartTimeEmployees"/>
+			<property name="com.jaspersoft.studio.field.label" value="PartTimeEmployees"/>
+		</field>
+		<field name="OrganizationDetailID" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="OrganizationDetailID"/>
+			<property name="com.jaspersoft.studio.field.label" value="OrganizationDetailID"/>
+		</field>
+		<field name="OrganizationID" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="OrganizationID"/>
+			<property name="com.jaspersoft.studio.field.label" value="OrganizationID"/>
+		</field>
+		<field name="ProductCode" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="ProductCode"/>
+			<property name="com.jaspersoft.studio.field.label" value="ProductCode"/>
+		</field>
+		<field name="RMCode" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="RMCode"/>
+			<property name="com.jaspersoft.studio.field.label" value="RMCode"/>
+		</field>
+		<field name="RMName" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="RMName"/>
+			<property name="com.jaspersoft.studio.field.label" value="RMName"/>
+		</field>
+		<field name="IdentificationNo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="IdentificationNo"/>
+			<property name="com.jaspersoft.studio.field.label" value="IdentificationNo"/>
+		</field>
+		<field name="COLUMN_42" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="OrganizationID"/>
+			<property name="com.jaspersoft.studio.field.label" value="OrganizationID"/>
+		</field>
+		<field name="TradeLicNo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="TradeLicNo"/>
+			<property name="com.jaspersoft.studio.field.label" value="TradeLicNo"/>
+		</field>
+		<field name="TradeLicIssueDate" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.name" value="TradeLicIssueDate"/>
+			<property name="com.jaspersoft.studio.field.label" value="TradeLicIssueDate"/>
+		</field>
+		<field name="TradeLicExpiryDate" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.name" value="TradeLicExpiryDate"/>
+			<property name="com.jaspersoft.studio.field.label" value="TradeLicExpiryDate"/>
+		</field>
+		<field name="IssueDate" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.name" value="IssueDate"/>
+			<property name="com.jaspersoft.studio.field.label" value="IssueDate"/>
+		</field>
+		<field name="ExpDate" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.name" value="ExpDate"/>
+			<property name="com.jaspersoft.studio.field.label" value="ExpDate"/>
+		</field>
+		<field name="ProductCategoryID" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="ProductCategoryID"/>
+			<property name="com.jaspersoft.studio.field.label" value="ProductCategoryID"/>
+		</field>
+		<field name="ProductCategory" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ProductCategory"/>
+			<property name="com.jaspersoft.studio.field.label" value="ProductCategory"/>
+		</field>
+		<field name="ProductSubCategoryID" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="ProductSubCategoryID"/>
+			<property name="com.jaspersoft.studio.field.label" value="ProductSubCategoryID"/>
+		</field>
+		<field name="ProductSubCategory" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ProductSubCategory"/>
+			<property name="com.jaspersoft.studio.field.label" value="ProductSubCategory"/>
+		</field>
+		<field name="Approver" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Approver"/>
+			<property name="com.jaspersoft.studio.field.label" value="Approver"/>
+		</field>
+		<field name="ApproveDate" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="ApproveDate"/>
+			<property name="com.jaspersoft.studio.field.label" value="ApproveDate"/>
+		</field>
+		<field name="AuthStatus" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="AuthStatus"/>
+			<property name="com.jaspersoft.studio.field.label" value="AuthStatus"/>
+		</field>
+		<field name="Purpose" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Purpose"/>
+			<property name="com.jaspersoft.studio.field.label" value="Purpose"/>
+		</field>
+		<field name="FinanceLocation" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="FinanceLocation"/>
+			<property name="com.jaspersoft.studio.field.label" value="FinanceLocation"/>
+		</field>
+		<field name="FinanceDistrict" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="FinanceDistrict"/>
+			<property name="com.jaspersoft.studio.field.label" value="FinanceDistrict"/>
+		</field>
+		<field name="FlexCubeProductName" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="FlexCubeProductName"/>
+			<property name="com.jaspersoft.studio.field.label" value="FlexCubeProductName"/>
+		</field>
+		<field name="FlexCubeProductCode" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="FlexCubeProductCode"/>
+			<property name="com.jaspersoft.studio.field.label" value="FlexCubeProductCode"/>
+		</field>
+		<field name="CashSecurity" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="CashSecurity"/>
+			<property name="com.jaspersoft.studio.field.label" value="CashSecurity"/>
+		</field>
+		<field name="CashSecurityRate" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="CashSecurityRate"/>
+			<property name="com.jaspersoft.studio.field.label" value="CashSecurityRate"/>
+		</field>
+		<field name="LicPoolRate" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="LicPoolRate"/>
+			<property name="com.jaspersoft.studio.field.label" value="LicPoolRate"/>
+		</field>
+		<field name="LDeposit" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="LDeposit"/>
+			<property name="com.jaspersoft.studio.field.label" value="LDeposit"/>
+		</field>
+		<field name="LDepositNoOfEMI" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="LDepositNoOfEMI"/>
+			<property name="com.jaspersoft.studio.field.label" value="LDepositNoOfEMI"/>
+		</field>
+		<field name="FinancialScore" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="FinancialScore"/>
+			<property name="com.jaspersoft.studio.field.label" value="FinancialScore"/>
+		</field>
+		<field name="NonFinancialScore" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="NonFinancialScore"/>
+			<property name="com.jaspersoft.studio.field.label" value="NonFinancialScore"/>
+		</field>
+		<field name="BehavioralScore" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="BehavioralScore"/>
+			<property name="com.jaspersoft.studio.field.label" value="BehavioralScore"/>
+		</field>
+		<field name="FinalScore" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="FinalScore"/>
+			<property name="com.jaspersoft.studio.field.label" value="FinalScore"/>
+		</field>
+		<field name="RiskGrading" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="RiskGrading"/>
+			<property name="com.jaspersoft.studio.field.label" value="RiskGrading"/>
+		</field>
+		<field name="MLTARiskGradin" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="MLTARiskGradin"/>
+			<property name="com.jaspersoft.studio.field.label" value="MLTARiskGradin"/>
+		</field>
+		<field name="ERMGrading" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ERMGrading"/>
+			<property name="com.jaspersoft.studio.field.label" value="ERMGrading"/>
+		</field>
+		<field name="ERMProjectCategory" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ERMProjectCategory"/>
+			<property name="com.jaspersoft.studio.field.label" value="ERMProjectCategory"/>
+		</field>
+		<field name="AssignedToAppraisal" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="AssignedToAppraisal"/>
+			<property name="com.jaspersoft.studio.field.label" value="AssignedToAppraisal"/>
+		</field>
+		<field name="ExcelWorkBookAddress" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ExcelWorkBookAddress"/>
+			<property name="com.jaspersoft.studio.field.label" value="ExcelWorkBookAddress"/>
+		</field>
+		<field name="AppraisalMaker" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="AppraisalMaker"/>
+			<property name="com.jaspersoft.studio.field.label" value="AppraisalMaker"/>
+		</field>
+		<field name="AppraisalReqDate" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="AppraisalReqDate"/>
+			<property name="com.jaspersoft.studio.field.label" value="AppraisalReqDate"/>
+		</field>
+		<field name="ApproverAppraisal" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ApproverAppraisal"/>
+			<property name="com.jaspersoft.studio.field.label" value="ApproverAppraisal"/>
+		</field>
+		<field name="ApproveDateAppraisal" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="ApproveDateAppraisal"/>
+			<property name="com.jaspersoft.studio.field.label" value="ApproveDateAppraisal"/>
+		</field>
+		<field name="PurposeID" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="PurposeID"/>
+			<property name="com.jaspersoft.studio.field.label" value="PurposeID"/>
+		</field>
+		<field name="BusinessType" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="BusinessType"/>
+			<property name="com.jaspersoft.studio.field.label" value="BusinessType"/>
+		</field>
+		<field name="PaymentType" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="PaymentType"/>
+			<property name="com.jaspersoft.studio.field.label" value="PaymentType"/>
+		</field>
+		<field name="ApplicationDate" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="ApplicationDate"/>
+			<property name="com.jaspersoft.studio.field.label" value="ApplicationDate"/>
+		</field>
+		<field name="BusinessPhone" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="BusinessPhone"/>
+			<property name="com.jaspersoft.studio.field.label" value="BusinessPhone"/>
+		</field>
+		<field name="BusinessPhoneContactID" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="BusinessPhoneContactID"/>
+			<property name="com.jaspersoft.studio.field.label" value="BusinessPhoneContactID"/>
+		</field>
+		<field name="TinNumber" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="TinNumber"/>
+			<property name="com.jaspersoft.studio.field.label" value="TinNumber"/>
+		</field>
+		<field name="IdentificationID" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="IdentificationID"/>
+			<property name="com.jaspersoft.studio.field.label" value="IdentificationID"/>
+		</field>
+		<field name="TINIDType" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="TINIDType"/>
+			<property name="com.jaspersoft.studio.field.label" value="TINIDType"/>
+		</field>
+		<field name="DesRegisteredMortgage" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="DesRegisteredMortgage"/>
+			<property name="com.jaspersoft.studio.field.label" value="DesRegisteredMortgage"/>
+		</field>
+		<field name="ProjectCost" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="ProjectCost"/>
+			<property name="com.jaspersoft.studio.field.label" value="ProjectCost"/>
+		</field>
+		<field name="SucceessionPlan" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.name" value="SucceessionPlan"/>
+			<property name="com.jaspersoft.studio.field.label" value="SucceessionPlan"/>
+		</field>
+		<field name="SucceedTo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="SucceedTo"/>
+			<property name="com.jaspersoft.studio.field.label" value="SucceedTo"/>
+		</field>
+		<field name="Mobile" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Mobile"/>
+			<property name="com.jaspersoft.studio.field.label" value="Mobile"/>
+		</field>
+		<field name="MobileContactNmbrID" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="MobileContactNmbrID"/>
+			<property name="com.jaspersoft.studio.field.label" value="MobileContactNmbrID"/>
+		</field>
+		<field name="Telephone" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Telephone"/>
+			<property name="com.jaspersoft.studio.field.label" value="Telephone"/>
+		</field>
+		<field name="TelephoneContactNmbrID" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="TelephoneContactNmbrID"/>
+			<property name="com.jaspersoft.studio.field.label" value="TelephoneContactNmbrID"/>
+		</field>
+		<field name="Email" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Email"/>
+			<property name="com.jaspersoft.studio.field.label" value="Email"/>
+		</field>
+		<field name="EAddressID" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="EAddressID"/>
+			<property name="com.jaspersoft.studio.field.label" value="EAddressID"/>
+		</field>
+		<field name="WFStatus" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="WFStatus"/>
+			<property name="com.jaspersoft.studio.field.label" value="WFStatus"/>
+		</field>
+		<field name="IncorporationNumber" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="IncorporationNumber"/>
+			<property name="com.jaspersoft.studio.field.label" value="IncorporationNumber"/>
+		</field>
+		<field name="NetExposure" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="NetExposure"/>
+			<property name="com.jaspersoft.studio.field.label" value="NetExposure"/>
+		</field>
+		<field name="MoratoriumPeriod" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="MoratoriumPeriod"/>
+			<property name="com.jaspersoft.studio.field.label" value="MoratoriumPeriod"/>
+		</field>
+		<field name="InterestRateType" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="InterestRateType"/>
+			<property name="com.jaspersoft.studio.field.label" value="InterestRateType"/>
+		</field>
+		<field name="CardedRate" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="CardedRate"/>
+			<property name="com.jaspersoft.studio.field.label" value="CardedRate"/>
+		</field>
+		<field name="CoFI" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="CoFI"/>
+			<property name="com.jaspersoft.studio.field.label" value="CoFI"/>
+		</field>
+		<field name="Spread" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="Spread"/>
+			<property name="com.jaspersoft.studio.field.label" value="Spread"/>
+		</field>
+		<field name="CardedFeesRate" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="CardedFeesRate"/>
+			<property name="com.jaspersoft.studio.field.label" value="CardedFeesRate"/>
+		</field>
+		<field name="ProsposedFeesRate" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="ProsposedFeesRate"/>
+			<property name="com.jaspersoft.studio.field.label" value="ProsposedFeesRate"/>
+		</field>
+		<field name="SecurityValue" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="SecurityValue"/>
+			<property name="com.jaspersoft.studio.field.label" value="SecurityValue"/>
+		</field>
+		<field name="ApplicationFee" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="ApplicationFee"/>
+			<property name="com.jaspersoft.studio.field.label" value="ApplicationFee"/>
+		</field>
+		<field name="CampaignID" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="CampaignID"/>
+			<property name="com.jaspersoft.studio.field.label" value="CampaignID"/>
+		</field>
+		<field name="Remarks" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Remarks"/>
+			<property name="com.jaspersoft.studio.field.label" value="Remarks"/>
+		</field>
+		<field name="STMCode" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="STMCode"/>
+			<property name="com.jaspersoft.studio.field.label" value="STMCode"/>
+		</field>
+		<field name="STMName" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="STMName"/>
+			<property name="com.jaspersoft.studio.field.label" value="STMName"/>
+		</field>
+		<field name="BusinessRegion" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="BusinessRegion"/>
+			<property name="com.jaspersoft.studio.field.label" value="BusinessRegion"/>
+		</field>
+		<field name="ClientSegmentation" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ClientSegmentation"/>
+			<property name="com.jaspersoft.studio.field.label" value="ClientSegmentation"/>
+		</field>
+		<field name="AMTFR" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="AMTFR"/>
+			<property name="com.jaspersoft.studio.field.label" value="AMTFR"/>
+		</field>
+		<field name="BusinessChannel" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="BusinessChannel"/>
+			<property name="com.jaspersoft.studio.field.label" value="BusinessChannel"/>
+		</field>
+		<field name="LoanPurposeType" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="LoanPurposeType"/>
+			<property name="com.jaspersoft.studio.field.label" value="LoanPurposeType"/>
+		</field>
+		<field name="WFStatusAppraisal" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="WFStatusAppraisal"/>
+			<property name="com.jaspersoft.studio.field.label" value="WFStatusAppraisal"/>
+		</field>
+		<field name="AnalystRemark" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="AnalystRemark"/>
+			<property name="com.jaspersoft.studio.field.label" value="AnalystRemark"/>
+		</field>
+		<field name="RequestDelayReason" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="RequestDelayReason"/>
+			<property name="com.jaspersoft.studio.field.label" value="RequestDelayReason"/>
+		</field>
+		<field name="SpreadType" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="SpreadType"/>
+			<property name="com.jaspersoft.studio.field.label" value="SpreadType"/>
+		</field>
+		<field name="IncrementalEMI" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="IncrementalEMI"/>
+			<property name="com.jaspersoft.studio.field.label" value="IncrementalEMI"/>
+		</field>
+		<field name="DBRIncreasableRate" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="DBRIncreasableRate"/>
+			<property name="com.jaspersoft.studio.field.label" value="DBRIncreasableRate"/>
+		</field>
+		<field name="SPProspectListID" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="SPProspectListID"/>
+			<property name="com.jaspersoft.studio.field.label" value="SPProspectListID"/>
+		</field>
+		<field name="XLVersion" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="XLVersion"/>
+			<property name="com.jaspersoft.studio.field.label" value="XLVersion"/>
+		</field>
+		<field name="isAccessXL" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.name" value="isAccessXL"/>
+			<property name="com.jaspersoft.studio.field.label" value="isAccessXL"/>
+		</field>
+		<field name="EconomicPurposesCode" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="EconomicPurposesCode"/>
+			<property name="com.jaspersoft.studio.field.label" value="EconomicPurposesCode"/>
+		</field>
+		<field name="EconomicPurposes" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="EconomicPurposes"/>
+			<property name="com.jaspersoft.studio.field.label" value="EconomicPurposes"/>
+		</field>
+		<field name="PrepaymentCharge" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="PrepaymentCharge"/>
+			<property name="com.jaspersoft.studio.field.label" value="PrepaymentCharge"/>
+		</field>
+		<field name="ForeclosedCharge" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="ForeclosedCharge"/>
+			<property name="com.jaspersoft.studio.field.label" value="ForeclosedCharge"/>
+		</field>
+		<field name="BoardresolutionofDeveloper" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="BoardresolutionofDeveloper"/>
+			<property name="com.jaspersoft.studio.field.label" value="BoardresolutionofDeveloper"/>
+		</field>
+		<field name="VendorKyc" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="VendorKyc"/>
+			<property name="com.jaspersoft.studio.field.label" value="VendorKyc"/>
+		</field>
+		<field name="COLUMN_134" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="XLVersion"/>
+			<property name="com.jaspersoft.studio.field.label" value="XLVersion"/>
+		</field>
+		<field name="COLUMN_135" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="isAccessXL"/>
+			<property name="com.jaspersoft.studio.field.label" value="isAccessXL"/>
+		</field>
+		<field name="Stage" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="Stage"/>
+			<property name="com.jaspersoft.studio.field.label" value="Stage"/>
+		</field>
+		<field name="ProcurementTypeCode" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="ProcurementTypeCode"/>
+			<property name="com.jaspersoft.studio.field.label" value="ProcurementTypeCode"/>
+		</field>
+		<field name="AccountNumber" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="AccountNumber"/>
+			<property name="com.jaspersoft.studio.field.label" value="AccountNumber"/>
+		</field>
+		<field name="RefinancingScheme" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="RefinancingScheme"/>
+			<property name="com.jaspersoft.studio.field.label" value="RefinancingScheme"/>
+		</field>
+		<field name="RefferedByCode" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="RefferedByCode"/>
+			<property name="com.jaspersoft.studio.field.label" value="RefferedByCode"/>
+		</field>
+		<field name="RefferedBy" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="RefferedBy"/>
+			<property name="com.jaspersoft.studio.field.label" value="RefferedBy"/>
+		</field>
+		<field name="Disbursementstatus" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Disbursementstatus"/>
+			<property name="com.jaspersoft.studio.field.label" value="Disbursementstatus"/>
+		</field>
+		<field name="CustomerClassification" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="CustomerClassification"/>
+			<property name="com.jaspersoft.studio.field.label" value="CustomerClassification"/>
+		</field>
+		<field name="AssignedToCPU" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="AssignedToCPU"/>
+			<property name="com.jaspersoft.studio.field.label" value="AssignedToCPU"/>
+		</field>
+		<field name="PrepaymentdiscountfeeRate" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="PrepaymentdiscountfeeRate"/>
+			<property name="com.jaspersoft.studio.field.label" value="PrepaymentdiscountfeeRate"/>
+		</field>
+		<field name="RefinancingSchemeRateifDeclined" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="RefinancingSchemeRateifDeclined"/>
+			<property name="com.jaspersoft.studio.field.label" value="RefinancingSchemeRateifDeclined"/>
+		</field>
+		<field name="CRGApplicability" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="CRGApplicability"/>
+			<property name="com.jaspersoft.studio.field.label" value="CRGApplicability"/>
+		</field>
+		<field name="NoCRGApplicabilityReason" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="NoCRGApplicabilityReason"/>
+			<property name="com.jaspersoft.studio.field.label" value="NoCRGApplicabilityReason"/>
+		</field>
+		<field name="ISCRGApplicable" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ISCRGApplicable"/>
+			<property name="com.jaspersoft.studio.field.label" value="ISCRGApplicable"/>
+		</field>
+		<field name="RecommendedLoan" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="RecommendedLoan"/>
+			<property name="com.jaspersoft.studio.field.label" value="RecommendedLoan"/>
+		</field>
+		<field name="FinalDocumentTransfer" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="FinalDocumentTransfer"/>
+			<property name="com.jaspersoft.studio.field.label" value="FinalDocumentTransfer"/>
+		</field>
+		<field name="PrevHighestNetExposure" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="PrevHighestNetExposure"/>
+			<property name="com.jaspersoft.studio.field.label" value="PrevHighestNetExposure"/>
+		</field>
+		<field name="Weakness" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Weakness"/>
+			<property name="com.jaspersoft.studio.field.label" value="Weakness"/>
+		</field>
+		<field name="ETPStatus" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ETPStatus"/>
+			<property name="com.jaspersoft.studio.field.label" value="ETPStatus"/>
+		</field>
+		<field name="ETPRequirement" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ETPRequirement"/>
+			<property name="com.jaspersoft.studio.field.label" value="ETPRequirement"/>
+		</field>
+		<field name="ECCAvailability" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ECCAvailability"/>
+			<property name="com.jaspersoft.studio.field.label" value="ECCAvailability"/>
+		</field>
+		<field name="NatureofBusinessERM" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="NatureofBusinessERM"/>
+			<property name="com.jaspersoft.studio.field.label" value="NatureofBusinessERM"/>
+		</field>
+		<field name="Division" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Division"/>
+			<property name="com.jaspersoft.studio.field.label" value="Division"/>
+		</field>
+		<field name="Region" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Region"/>
+			<property name="com.jaspersoft.studio.field.label" value="Region"/>
+		</field>
+		<field name="Upazilla" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Upazilla"/>
+			<property name="com.jaspersoft.studio.field.label" value="Upazilla"/>
+		</field>
+		<field name="BBCluster" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="BBCluster"/>
+			<property name="com.jaspersoft.studio.field.label" value="BBCluster"/>
+		</field>
+		<field name="NatureofBusinessSector" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="NatureofBusinessSector"/>
+			<property name="com.jaspersoft.studio.field.label" value="NatureofBusinessSector"/>
+		</field>
+		<field name="BBProduct" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="BBProduct"/>
+			<property name="com.jaspersoft.studio.field.label" value="BBProduct"/>
+		</field>
+		<field name="ExpectedDisbursmentDate" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="ExpectedDisbursmentDate"/>
+			<property name="com.jaspersoft.studio.field.label" value="ExpectedDisbursmentDate"/>
+		</field>
+		<field name="FreshLoan" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="FreshLoan"/>
+			<property name="com.jaspersoft.studio.field.label" value="FreshLoan"/>
+		</field>
+		<field name="CRMSecurityRemark" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="CRMSecurityRemark"/>
+			<property name="com.jaspersoft.studio.field.label" value="CRMSecurityRemark"/>
+		</field>
+		<field name="SecurityMode" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="SecurityMode"/>
+			<property name="com.jaspersoft.studio.field.label" value="SecurityMode"/>
+		</field>
+		<field name="DpDays" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="DpDays"/>
+			<property name="com.jaspersoft.studio.field.label" value="DpDays"/>
+		</field>
+		<field name="IndustryType" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="IndustryType"/>
+			<property name="com.jaspersoft.studio.field.label" value="IndustryType"/>
+		</field>
+		<field name="SecurityType" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="SecurityType"/>
+			<property name="com.jaspersoft.studio.field.label" value="SecurityType"/>
+		</field>
+		<field name="CGSApplicable" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="CGSApplicable"/>
+			<property name="com.jaspersoft.studio.field.label" value="CGSApplicable"/>
+		</field>
+		<field name="ESMSChecklistApplicability" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ESMSChecklistApplicability"/>
+			<property name="com.jaspersoft.studio.field.label" value="ESMSChecklistApplicability"/>
+		</field>
+		<field name="ClusterId" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ClusterId"/>
+			<property name="com.jaspersoft.studio.field.label" value="ClusterId"/>
+		</field>
+		<field name="IsManual" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.name" value="IsManual"/>
+			<property name="com.jaspersoft.studio.field.label" value="IsManual"/>
+		</field>
+		<field name="PrevRefNo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="PrevRefNo"/>
+			<property name="com.jaspersoft.studio.field.label" value="PrevRefNo"/>
+		</field>
+		<field name="IsManualCashSecurity" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.name" value="IsManualCashSecurity"/>
+			<property name="com.jaspersoft.studio.field.label" value="IsManualCashSecurity"/>
+		</field>
+		<field name="NetExposureText" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="NetExposureText"/>
+			<property name="com.jaspersoft.studio.field.label" value="NetExposureText"/>
+		</field>
+		<field name="COLUMN_178" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="BusinessChannel"/>
+			<property name="com.jaspersoft.studio.field.label" value="BusinessChannel"/>
+		</field>
+		<field name="FileCategory" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="FileCategory"/>
+			<property name="com.jaspersoft.studio.field.label" value="FileCategory"/>
+		</field>
+		<field name="Activitiesnotlisted" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Activitiesnotlisted"/>
+			<property name="com.jaspersoft.studio.field.label" value="Activitiesnotlisted"/>
+		</field>
+		<field name="ECCApplicability" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ECCApplicability"/>
+			<property name="com.jaspersoft.studio.field.label" value="ECCApplicability"/>
+		</field>
+		<field name="CASANo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="CASANo"/>
+			<property name="com.jaspersoft.studio.field.label" value="CASANo"/>
+		</field>
+		<field name="OSPRefNo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="OSPRefNo"/>
+			<property name="com.jaspersoft.studio.field.label" value="OSPRefNo"/>
+		</field>
+		<field name="IsGroupLimit" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.name" value="IsGroupLimit"/>
+			<property name="com.jaspersoft.studio.field.label" value="IsGroupLimit"/>
+		</field>
+		<field name="TaggedReferenceNo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="TaggedReferenceNo"/>
+			<property name="com.jaspersoft.studio.field.label" value="TaggedReferenceNo"/>
+		</field>
+		<field name="COLUMN_186" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="RefinancingScheme"/>
+			<property name="com.jaspersoft.studio.field.label" value="RefinancingScheme"/>
+		</field>
+		<field name="EMIDetails" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="EMIDetails"/>
+			<property name="com.jaspersoft.studio.field.label" value="EMIDetails"/>
+		</field>
+		<field name="MoratoriumDetails" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="MoratoriumDetails"/>
+			<property name="com.jaspersoft.studio.field.label" value="MoratoriumDetails"/>
+		</field>
+		<field name="MoratoriumType" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="MoratoriumType"/>
+			<property name="com.jaspersoft.studio.field.label" value="MoratoriumType"/>
+		</field>
+		<field name="InitialRate" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="InitialRate"/>
+			<property name="com.jaspersoft.studio.field.label" value="InitialRate"/>
+		</field>
+		<field name="IsMoratorium" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.name" value="IsMoratorium"/>
+			<property name="com.jaspersoft.studio.field.label" value="IsMoratorium"/>
+		</field>
+		<field name="LPIRate" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="LPIRate"/>
+			<property name="com.jaspersoft.studio.field.label" value="LPIRate"/>
+		</field>
+		<field name="RepaymentMode" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="RepaymentMode"/>
+			<property name="com.jaspersoft.studio.field.label" value="RepaymentMode"/>
+		</field>
+		<field name="RepaymentMethod" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="RepaymentMethod"/>
+			<property name="com.jaspersoft.studio.field.label" value="RepaymentMethod"/>
+		</field>
+		<field name="MoratoriumRate" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="MoratoriumRate"/>
+			<property name="com.jaspersoft.studio.field.label" value="MoratoriumRate"/>
+		</field>
+		<field name="FundedLiabInCIB" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="FundedLiabInCIB"/>
+			<property name="com.jaspersoft.studio.field.label" value="FundedLiabInCIB"/>
+		</field>
+		<field name="ESMSRelatedActionPlan" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ESMSRelatedActionPlan"/>
+			<property name="com.jaspersoft.studio.field.label" value="ESMSRelatedActionPlan"/>
+		</field>
+		<field name="AvailibilityPeriod" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="AvailibilityPeriod"/>
+			<property name="com.jaspersoft.studio.field.label" value="AvailibilityPeriod"/>
+		</field>
+		<field name="IdlcContribution" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="IdlcContribution"/>
+			<property name="com.jaspersoft.studio.field.label" value="IdlcContribution"/>
+		</field>
+		<field name="RateType" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="RateType"/>
+			<property name="com.jaspersoft.studio.field.label" value="RateType"/>
+		</field>
+		<field name="CumulativeExposure" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="CumulativeExposure"/>
+			<property name="com.jaspersoft.studio.field.label" value="CumulativeExposure"/>
+		</field>
+		<field name="ApprovalType" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ApprovalType"/>
+			<property name="com.jaspersoft.studio.field.label" value="ApprovalType"/>
+		</field>
+		<field name="IsInterchangeable" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.name" value="IsInterchangeable"/>
+			<property name="com.jaspersoft.studio.field.label" value="IsInterchangeable"/>
+		</field>
+		<field name="InterchangeableAmount" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="InterchangeableAmount"/>
+			<property name="com.jaspersoft.studio.field.label" value="InterchangeableAmount"/>
+		</field>
+		<field name="GreenFinProduct" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="GreenFinProduct"/>
+			<property name="com.jaspersoft.studio.field.label" value="GreenFinProduct"/>
+		</field>
+		<field name="GreenFinProductRange" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="GreenFinProductRange"/>
+			<property name="com.jaspersoft.studio.field.label" value="GreenFinProductRange"/>
+		</field>
+		<field name="Sector" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="Sector"/>
+			<property name="com.jaspersoft.studio.field.label" value="Sector"/>
+		</field>
+		<field name="SubSector" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="SubSector"/>
+			<property name="com.jaspersoft.studio.field.label" value="SubSector"/>
+		</field>
+		<field name="BBPurposeCode" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="BBPurposeCode"/>
+			<property name="com.jaspersoft.studio.field.label" value="BBPurposeCode"/>
+		</field>
+		<field name="BBSectorID" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="BBSectorID"/>
+			<property name="com.jaspersoft.studio.field.label" value="BBSectorID"/>
+		</field>
+		<field name="InterchangeableTo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="InterchangeableTo"/>
+			<property name="com.jaspersoft.studio.field.label" value="InterchangeableTo"/>
+		</field>
+		<field name="ExpectedFileSubmissionDate" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="ExpectedFileSubmissionDate"/>
+			<property name="com.jaspersoft.studio.field.label" value="ExpectedFileSubmissionDate"/>
+		</field>
+		<field name="WorkflowStage" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="WorkflowStage"/>
+			<property name="com.jaspersoft.studio.field.label" value="WorkflowStage"/>
+		</field>
+		<field name="IsManualMarginSpread" class="java.lang.Boolean">
+			<property name="com.jaspersoft.studio.field.name" value="IsManualMarginSpread"/>
+			<property name="com.jaspersoft.studio.field.label" value="IsManualMarginSpread"/>
+		</field>
+		<field name="PPGCategory" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="PPGCategory"/>
+			<property name="com.jaspersoft.studio.field.label" value="PPGCategory"/>
+		</field>
+		<field name="GroupSize" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="GroupSize"/>
+			<property name="com.jaspersoft.studio.field.label" value="GroupSize"/>
+		</field>
+		<field name="PaymentTo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="PaymentTo"/>
+			<property name="com.jaspersoft.studio.field.label" value="PaymentTo"/>
+		</field>
+		<field name="UnitName" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="UnitName"/>
+			<property name="com.jaspersoft.studio.field.label" value="UnitName"/>
+		</field>
+		<field name="ProbabilityDefault" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="ProbabilityDefault"/>
+			<property name="com.jaspersoft.studio.field.label" value="ProbabilityDefault"/>
+		</field>
+		<field name="OptionOfFinancing" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="OptionOfFinancing"/>
+			<property name="com.jaspersoft.studio.field.label" value="OptionOfFinancing"/>
+		</field>
+		<field name="AssetTypeCode" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="AssetTypeCode"/>
+			<property name="com.jaspersoft.studio.field.label" value="AssetTypeCode"/>
+		</field>
+		<field name="GasConnection" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="GasConnection"/>
+			<property name="com.jaspersoft.studio.field.label" value="GasConnection"/>
+		</field>
+		<field name="ElectricityConnection" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="ElectricityConnection"/>
+			<property name="com.jaspersoft.studio.field.label" value="ElectricityConnection"/>
+		</field>
+		<field name="OrganicFarming" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="OrganicFarming"/>
+			<property name="com.jaspersoft.studio.field.label" value="OrganicFarming"/>
+		</field>
+		<field name="VehicleType" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="VehicleType"/>
+			<property name="com.jaspersoft.studio.field.label" value="VehicleType"/>
+		</field>
+		<field name="GracePeriod" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="GracePeriod"/>
+			<property name="com.jaspersoft.studio.field.label" value="GracePeriod"/>
+		</field>
+		<field name="ESDDDate" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="ESDDDate"/>
+			<property name="com.jaspersoft.studio.field.label" value="ESDDDate"/>
+		</field>
+		<field name="AdvanceEmi" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="AdvanceEmi"/>
+			<property name="com.jaspersoft.studio.field.label" value="AdvanceEmi"/>
+		</field>
+		<field name="BinRegNo" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="BinRegNo"/>
+			<property name="com.jaspersoft.studio.field.label" value="BinRegNo"/>
+		</field>
+	</dataset>
+	<parameter name="ReferenceNo" class="java.lang.String"/>
+	<query language="SQL"><![CDATA[{call udspCrp_QryProspectInfoByReferenceNo($P{ReferenceNo})}]]></query>
+	<field name="ProspectID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="ProspectID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ProspectID"/>
+	</field>
+	<field name="LeadReferenceNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LeadReferenceNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="LeadReferenceNo"/>
+	</field>
+	<field name="EntryBy" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="EntryBy"/>
+		<property name="com.jaspersoft.studio.field.label" value="EntryBy"/>
+	</field>
+	<field name="RelationshipwithIDLC" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="RelationshipwithIDLC"/>
+		<property name="com.jaspersoft.studio.field.label" value="RelationshipwithIDLC"/>
+	</field>
+	<field name="RequestDate" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="RequestDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="RequestDate"/>
+	</field>
+	<field name="CustomerNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CustomerNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="CustomerNo"/>
+	</field>
+	<field name="ProspectName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ProspectName"/>
+		<property name="com.jaspersoft.studio.field.label" value="ProspectName"/>
+	</field>
+	<field name="Type" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Type"/>
+		<property name="com.jaspersoft.studio.field.label" value="Type"/>
+	</field>
+	<field name="ProspectIndexID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="ProspectIndexID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ProspectIndexID"/>
+	</field>
+	<field name="Address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Address"/>
+		<property name="com.jaspersoft.studio.field.label" value="Address"/>
+	</field>
+	<field name="HouseName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="HouseName"/>
+		<property name="com.jaspersoft.studio.field.label" value="HouseName"/>
+	</field>
+	<field name="ApartmentNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ApartmentNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="ApartmentNo"/>
+	</field>
+	<field name="HoldingNumber" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="HoldingNumber"/>
+		<property name="com.jaspersoft.studio.field.label" value="HoldingNumber"/>
+	</field>
+	<field name="Road" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Road"/>
+		<property name="com.jaspersoft.studio.field.label" value="Road"/>
+	</field>
+	<field name="Floor" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Floor"/>
+		<property name="com.jaspersoft.studio.field.label" value="Floor"/>
+	</field>
+	<field name="PO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PO"/>
+		<property name="com.jaspersoft.studio.field.label" value="PO"/>
+	</field>
+	<field name="PS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PS"/>
+		<property name="com.jaspersoft.studio.field.label" value="PS"/>
+	</field>
+	<field name="City" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="City"/>
+		<property name="com.jaspersoft.studio.field.label" value="City"/>
+	</field>
+	<field name="Country" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Country"/>
+		<property name="com.jaspersoft.studio.field.label" value="Country"/>
+	</field>
+	<field name="Branch" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Branch"/>
+		<property name="com.jaspersoft.studio.field.label" value="Branch"/>
+	</field>
+	<field name="BranchCode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BranchCode"/>
+		<property name="com.jaspersoft.studio.field.label" value="BranchCode"/>
+	</field>
+	<field name="ProposedAmount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ProposedAmount"/>
+		<property name="com.jaspersoft.studio.field.label" value="ProposedAmount"/>
+	</field>
+	<field name="AmountRequestedFrom" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="AmountRequestedFrom"/>
+		<property name="com.jaspersoft.studio.field.label" value="AmountRequestedFrom"/>
+	</field>
+	<field name="SanctionAmount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="SanctionAmount"/>
+		<property name="com.jaspersoft.studio.field.label" value="SanctionAmount"/>
+	</field>
+	<field name="EMI" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="EMI"/>
+		<property name="com.jaspersoft.studio.field.label" value="EMI"/>
+	</field>
+	<field name="InterestRate" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="InterestRate"/>
+		<property name="com.jaspersoft.studio.field.label" value="InterestRate"/>
+	</field>
+	<field name="TermInMonth" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="TermInMonth"/>
+		<property name="com.jaspersoft.studio.field.label" value="TermInMonth"/>
+	</field>
+	<field name="Periodicity" class="java.lang.Short">
+		<property name="com.jaspersoft.studio.field.name" value="Periodicity"/>
+		<property name="com.jaspersoft.studio.field.label" value="Periodicity"/>
+	</field>
+	<field name="Product" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Product"/>
+		<property name="com.jaspersoft.studio.field.label" value="Product"/>
+	</field>
+	<field name="ForcastedDecrease" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="ForcastedDecrease"/>
+		<property name="com.jaspersoft.studio.field.label" value="ForcastedDecrease"/>
+	</field>
+	<field name="ForcastedIncrease" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="ForcastedIncrease"/>
+		<property name="com.jaspersoft.studio.field.label" value="ForcastedIncrease"/>
+	</field>
+	<field name="FullTimeEmployees" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="FullTimeEmployees"/>
+		<property name="com.jaspersoft.studio.field.label" value="FullTimeEmployees"/>
+	</field>
+	<field name="MenEmployees" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="MenEmployees"/>
+		<property name="com.jaspersoft.studio.field.label" value="MenEmployees"/>
+	</field>
+	<field name="WomenEmployees" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="WomenEmployees"/>
+		<property name="com.jaspersoft.studio.field.label" value="WomenEmployees"/>
+	</field>
+	<field name="PartTimeEmployees" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="PartTimeEmployees"/>
+		<property name="com.jaspersoft.studio.field.label" value="PartTimeEmployees"/>
+	</field>
+	<field name="OrganizationDetailID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="OrganizationDetailID"/>
+		<property name="com.jaspersoft.studio.field.label" value="OrganizationDetailID"/>
+	</field>
+	<field name="OrganizationID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="OrganizationID"/>
+		<property name="com.jaspersoft.studio.field.label" value="OrganizationID"/>
+	</field>
+	<field name="ProductCode" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="ProductCode"/>
+		<property name="com.jaspersoft.studio.field.label" value="ProductCode"/>
+	</field>
+	<field name="RMCode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="RMCode"/>
+		<property name="com.jaspersoft.studio.field.label" value="RMCode"/>
+	</field>
+	<field name="RMName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="RMName"/>
+		<property name="com.jaspersoft.studio.field.label" value="RMName"/>
+	</field>
+	<field name="IdentificationNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="IdentificationNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="IdentificationNo"/>
+	</field>
+	<field name="COLUMN_42" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="OrganizationID"/>
+		<property name="com.jaspersoft.studio.field.label" value="OrganizationID"/>
+	</field>
+	<field name="TradeLicNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TradeLicNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="TradeLicNo"/>
+	</field>
+	<field name="TradeLicIssueDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="TradeLicIssueDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="TradeLicIssueDate"/>
+	</field>
+	<field name="TradeLicExpiryDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="TradeLicExpiryDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="TradeLicExpiryDate"/>
+	</field>
+	<field name="IssueDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="IssueDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="IssueDate"/>
+	</field>
+	<field name="ExpDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="ExpDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="ExpDate"/>
+	</field>
+	<field name="ProductCategoryID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="ProductCategoryID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ProductCategoryID"/>
+	</field>
+	<field name="ProductCategory" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ProductCategory"/>
+		<property name="com.jaspersoft.studio.field.label" value="ProductCategory"/>
+	</field>
+	<field name="ProductSubCategoryID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="ProductSubCategoryID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ProductSubCategoryID"/>
+	</field>
+	<field name="ProductSubCategory" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ProductSubCategory"/>
+		<property name="com.jaspersoft.studio.field.label" value="ProductSubCategory"/>
+	</field>
+	<field name="Approver" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Approver"/>
+		<property name="com.jaspersoft.studio.field.label" value="Approver"/>
+	</field>
+	<field name="ApproveDate" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="ApproveDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="ApproveDate"/>
+	</field>
+	<field name="AuthStatus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="AuthStatus"/>
+		<property name="com.jaspersoft.studio.field.label" value="AuthStatus"/>
+	</field>
+	<field name="Purpose" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Purpose"/>
+		<property name="com.jaspersoft.studio.field.label" value="Purpose"/>
+	</field>
+	<field name="FinanceLocation" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FinanceLocation"/>
+		<property name="com.jaspersoft.studio.field.label" value="FinanceLocation"/>
+	</field>
+	<field name="FinanceDistrict" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FinanceDistrict"/>
+		<property name="com.jaspersoft.studio.field.label" value="FinanceDistrict"/>
+	</field>
+	<field name="FlexCubeProductName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FlexCubeProductName"/>
+		<property name="com.jaspersoft.studio.field.label" value="FlexCubeProductName"/>
+	</field>
+	<field name="FlexCubeProductCode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FlexCubeProductCode"/>
+		<property name="com.jaspersoft.studio.field.label" value="FlexCubeProductCode"/>
+	</field>
+	<field name="CashSecurity" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="CashSecurity"/>
+		<property name="com.jaspersoft.studio.field.label" value="CashSecurity"/>
+	</field>
+	<field name="CashSecurityRate" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="CashSecurityRate"/>
+		<property name="com.jaspersoft.studio.field.label" value="CashSecurityRate"/>
+	</field>
+	<field name="LicPoolRate" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="LicPoolRate"/>
+		<property name="com.jaspersoft.studio.field.label" value="LicPoolRate"/>
+	</field>
+	<field name="LDeposit" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="LDeposit"/>
+		<property name="com.jaspersoft.studio.field.label" value="LDeposit"/>
+	</field>
+	<field name="LDepositNoOfEMI" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="LDepositNoOfEMI"/>
+		<property name="com.jaspersoft.studio.field.label" value="LDepositNoOfEMI"/>
+	</field>
+	<field name="FinancialScore" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FinancialScore"/>
+		<property name="com.jaspersoft.studio.field.label" value="FinancialScore"/>
+	</field>
+	<field name="NonFinancialScore" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NonFinancialScore"/>
+		<property name="com.jaspersoft.studio.field.label" value="NonFinancialScore"/>
+	</field>
+	<field name="BehavioralScore" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BehavioralScore"/>
+		<property name="com.jaspersoft.studio.field.label" value="BehavioralScore"/>
+	</field>
+	<field name="FinalScore" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FinalScore"/>
+		<property name="com.jaspersoft.studio.field.label" value="FinalScore"/>
+	</field>
+	<field name="RiskGrading" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="RiskGrading"/>
+		<property name="com.jaspersoft.studio.field.label" value="RiskGrading"/>
+	</field>
+	<field name="MLTARiskGradin" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MLTARiskGradin"/>
+		<property name="com.jaspersoft.studio.field.label" value="MLTARiskGradin"/>
+	</field>
+	<field name="ERMGrading" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ERMGrading"/>
+		<property name="com.jaspersoft.studio.field.label" value="ERMGrading"/>
+	</field>
+	<field name="ERMProjectCategory" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ERMProjectCategory"/>
+		<property name="com.jaspersoft.studio.field.label" value="ERMProjectCategory"/>
+	</field>
+	<field name="AssignedToAppraisal" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="AssignedToAppraisal"/>
+		<property name="com.jaspersoft.studio.field.label" value="AssignedToAppraisal"/>
+	</field>
+	<field name="ExcelWorkBookAddress" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ExcelWorkBookAddress"/>
+		<property name="com.jaspersoft.studio.field.label" value="ExcelWorkBookAddress"/>
+	</field>
+	<field name="AppraisalMaker" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="AppraisalMaker"/>
+		<property name="com.jaspersoft.studio.field.label" value="AppraisalMaker"/>
+	</field>
+	<field name="AppraisalReqDate" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="AppraisalReqDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="AppraisalReqDate"/>
+	</field>
+	<field name="ApproverAppraisal" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ApproverAppraisal"/>
+		<property name="com.jaspersoft.studio.field.label" value="ApproverAppraisal"/>
+	</field>
+	<field name="ApproveDateAppraisal" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="ApproveDateAppraisal"/>
+		<property name="com.jaspersoft.studio.field.label" value="ApproveDateAppraisal"/>
+	</field>
+	<field name="PurposeID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="PurposeID"/>
+		<property name="com.jaspersoft.studio.field.label" value="PurposeID"/>
+	</field>
+	<field name="BusinessType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BusinessType"/>
+		<property name="com.jaspersoft.studio.field.label" value="BusinessType"/>
+	</field>
+	<field name="PaymentType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PaymentType"/>
+		<property name="com.jaspersoft.studio.field.label" value="PaymentType"/>
+	</field>
+	<field name="ApplicationDate" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="ApplicationDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="ApplicationDate"/>
+	</field>
+	<field name="BusinessPhone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BusinessPhone"/>
+		<property name="com.jaspersoft.studio.field.label" value="BusinessPhone"/>
+	</field>
+	<field name="BusinessPhoneContactID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="BusinessPhoneContactID"/>
+		<property name="com.jaspersoft.studio.field.label" value="BusinessPhoneContactID"/>
+	</field>
+	<field name="TinNumber" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TinNumber"/>
+		<property name="com.jaspersoft.studio.field.label" value="TinNumber"/>
+	</field>
+	<field name="IdentificationID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="IdentificationID"/>
+		<property name="com.jaspersoft.studio.field.label" value="IdentificationID"/>
+	</field>
+	<field name="TINIDType" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="TINIDType"/>
+		<property name="com.jaspersoft.studio.field.label" value="TINIDType"/>
+	</field>
+	<field name="DesRegisteredMortgage" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DesRegisteredMortgage"/>
+		<property name="com.jaspersoft.studio.field.label" value="DesRegisteredMortgage"/>
+	</field>
+	<field name="ProjectCost" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ProjectCost"/>
+		<property name="com.jaspersoft.studio.field.label" value="ProjectCost"/>
+	</field>
+	<field name="SucceessionPlan" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="SucceessionPlan"/>
+		<property name="com.jaspersoft.studio.field.label" value="SucceessionPlan"/>
+	</field>
+	<field name="SucceedTo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="SucceedTo"/>
+		<property name="com.jaspersoft.studio.field.label" value="SucceedTo"/>
+	</field>
+	<field name="Mobile" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Mobile"/>
+		<property name="com.jaspersoft.studio.field.label" value="Mobile"/>
+	</field>
+	<field name="MobileContactNmbrID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="MobileContactNmbrID"/>
+		<property name="com.jaspersoft.studio.field.label" value="MobileContactNmbrID"/>
+	</field>
+	<field name="Telephone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Telephone"/>
+		<property name="com.jaspersoft.studio.field.label" value="Telephone"/>
+	</field>
+	<field name="TelephoneContactNmbrID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="TelephoneContactNmbrID"/>
+		<property name="com.jaspersoft.studio.field.label" value="TelephoneContactNmbrID"/>
+	</field>
+	<field name="Email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Email"/>
+		<property name="com.jaspersoft.studio.field.label" value="Email"/>
+	</field>
+	<field name="EAddressID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="EAddressID"/>
+		<property name="com.jaspersoft.studio.field.label" value="EAddressID"/>
+	</field>
+	<field name="WFStatus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="WFStatus"/>
+		<property name="com.jaspersoft.studio.field.label" value="WFStatus"/>
+	</field>
+	<field name="IncorporationNumber" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="IncorporationNumber"/>
+		<property name="com.jaspersoft.studio.field.label" value="IncorporationNumber"/>
+	</field>
+	<field name="NetExposure" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="NetExposure"/>
+		<property name="com.jaspersoft.studio.field.label" value="NetExposure"/>
+	</field>
+	<field name="MoratoriumPeriod" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="MoratoriumPeriod"/>
+		<property name="com.jaspersoft.studio.field.label" value="MoratoriumPeriod"/>
+	</field>
+	<field name="InterestRateType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="InterestRateType"/>
+		<property name="com.jaspersoft.studio.field.label" value="InterestRateType"/>
+	</field>
+	<field name="CardedRate" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="CardedRate"/>
+		<property name="com.jaspersoft.studio.field.label" value="CardedRate"/>
+	</field>
+	<field name="CoFI" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="CoFI"/>
+		<property name="com.jaspersoft.studio.field.label" value="CoFI"/>
+	</field>
+	<field name="Spread" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="Spread"/>
+		<property name="com.jaspersoft.studio.field.label" value="Spread"/>
+	</field>
+	<field name="CardedFeesRate" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="CardedFeesRate"/>
+		<property name="com.jaspersoft.studio.field.label" value="CardedFeesRate"/>
+	</field>
+	<field name="ProsposedFeesRate" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ProsposedFeesRate"/>
+		<property name="com.jaspersoft.studio.field.label" value="ProsposedFeesRate"/>
+	</field>
+	<field name="SecurityValue" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="SecurityValue"/>
+		<property name="com.jaspersoft.studio.field.label" value="SecurityValue"/>
+	</field>
+	<field name="ApplicationFee" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ApplicationFee"/>
+		<property name="com.jaspersoft.studio.field.label" value="ApplicationFee"/>
+	</field>
+	<field name="CampaignID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="CampaignID"/>
+		<property name="com.jaspersoft.studio.field.label" value="CampaignID"/>
+	</field>
+	<field name="Remarks" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Remarks"/>
+		<property name="com.jaspersoft.studio.field.label" value="Remarks"/>
+	</field>
+	<field name="STMCode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="STMCode"/>
+		<property name="com.jaspersoft.studio.field.label" value="STMCode"/>
+	</field>
+	<field name="STMName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="STMName"/>
+		<property name="com.jaspersoft.studio.field.label" value="STMName"/>
+	</field>
+	<field name="BusinessRegion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BusinessRegion"/>
+		<property name="com.jaspersoft.studio.field.label" value="BusinessRegion"/>
+	</field>
+	<field name="ClientSegmentation" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ClientSegmentation"/>
+		<property name="com.jaspersoft.studio.field.label" value="ClientSegmentation"/>
+	</field>
+	<field name="AMTFR" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="AMTFR"/>
+		<property name="com.jaspersoft.studio.field.label" value="AMTFR"/>
+	</field>
+	<field name="BusinessChannel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BusinessChannel"/>
+		<property name="com.jaspersoft.studio.field.label" value="BusinessChannel"/>
+	</field>
+	<field name="LoanPurposeType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LoanPurposeType"/>
+		<property name="com.jaspersoft.studio.field.label" value="LoanPurposeType"/>
+	</field>
+	<field name="WFStatusAppraisal" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="WFStatusAppraisal"/>
+		<property name="com.jaspersoft.studio.field.label" value="WFStatusAppraisal"/>
+	</field>
+	<field name="AnalystRemark" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="AnalystRemark"/>
+		<property name="com.jaspersoft.studio.field.label" value="AnalystRemark"/>
+	</field>
+	<field name="RequestDelayReason" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="RequestDelayReason"/>
+		<property name="com.jaspersoft.studio.field.label" value="RequestDelayReason"/>
+	</field>
+	<field name="SpreadType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="SpreadType"/>
+		<property name="com.jaspersoft.studio.field.label" value="SpreadType"/>
+	</field>
+	<field name="IncrementalEMI" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="IncrementalEMI"/>
+		<property name="com.jaspersoft.studio.field.label" value="IncrementalEMI"/>
+	</field>
+	<field name="DBRIncreasableRate" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="DBRIncreasableRate"/>
+		<property name="com.jaspersoft.studio.field.label" value="DBRIncreasableRate"/>
+	</field>
+	<field name="SPProspectListID" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="SPProspectListID"/>
+		<property name="com.jaspersoft.studio.field.label" value="SPProspectListID"/>
+	</field>
+	<field name="XLVersion" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="XLVersion"/>
+		<property name="com.jaspersoft.studio.field.label" value="XLVersion"/>
+	</field>
+	<field name="isAccessXL" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="isAccessXL"/>
+		<property name="com.jaspersoft.studio.field.label" value="isAccessXL"/>
+	</field>
+	<field name="EconomicPurposesCode" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="EconomicPurposesCode"/>
+		<property name="com.jaspersoft.studio.field.label" value="EconomicPurposesCode"/>
+	</field>
+	<field name="EconomicPurposes" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="EconomicPurposes"/>
+		<property name="com.jaspersoft.studio.field.label" value="EconomicPurposes"/>
+	</field>
+	<field name="PrepaymentCharge" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="PrepaymentCharge"/>
+		<property name="com.jaspersoft.studio.field.label" value="PrepaymentCharge"/>
+	</field>
+	<field name="ForeclosedCharge" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ForeclosedCharge"/>
+		<property name="com.jaspersoft.studio.field.label" value="ForeclosedCharge"/>
+	</field>
+	<field name="BoardresolutionofDeveloper" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BoardresolutionofDeveloper"/>
+		<property name="com.jaspersoft.studio.field.label" value="BoardresolutionofDeveloper"/>
+	</field>
+	<field name="VendorKyc" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="VendorKyc"/>
+		<property name="com.jaspersoft.studio.field.label" value="VendorKyc"/>
+	</field>
+	<field name="COLUMN_134" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="XLVersion"/>
+		<property name="com.jaspersoft.studio.field.label" value="XLVersion"/>
+	</field>
+	<field name="COLUMN_135" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="isAccessXL"/>
+		<property name="com.jaspersoft.studio.field.label" value="isAccessXL"/>
+	</field>
+	<field name="Stage" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="Stage"/>
+		<property name="com.jaspersoft.studio.field.label" value="Stage"/>
+	</field>
+	<field name="ProcurementTypeCode" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="ProcurementTypeCode"/>
+		<property name="com.jaspersoft.studio.field.label" value="ProcurementTypeCode"/>
+	</field>
+	<field name="AccountNumber" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="AccountNumber"/>
+		<property name="com.jaspersoft.studio.field.label" value="AccountNumber"/>
+	</field>
+	<field name="RefinancingScheme" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="RefinancingScheme"/>
+		<property name="com.jaspersoft.studio.field.label" value="RefinancingScheme"/>
+	</field>
+	<field name="RefferedByCode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="RefferedByCode"/>
+		<property name="com.jaspersoft.studio.field.label" value="RefferedByCode"/>
+	</field>
+	<field name="RefferedBy" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="RefferedBy"/>
+		<property name="com.jaspersoft.studio.field.label" value="RefferedBy"/>
+	</field>
+	<field name="Disbursementstatus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Disbursementstatus"/>
+		<property name="com.jaspersoft.studio.field.label" value="Disbursementstatus"/>
+	</field>
+	<field name="CustomerClassification" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CustomerClassification"/>
+		<property name="com.jaspersoft.studio.field.label" value="CustomerClassification"/>
+	</field>
+	<field name="AssignedToCPU" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="AssignedToCPU"/>
+		<property name="com.jaspersoft.studio.field.label" value="AssignedToCPU"/>
+	</field>
+	<field name="PrepaymentdiscountfeeRate" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="PrepaymentdiscountfeeRate"/>
+		<property name="com.jaspersoft.studio.field.label" value="PrepaymentdiscountfeeRate"/>
+	</field>
+	<field name="RefinancingSchemeRateifDeclined" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="RefinancingSchemeRateifDeclined"/>
+		<property name="com.jaspersoft.studio.field.label" value="RefinancingSchemeRateifDeclined"/>
+	</field>
+	<field name="CRGApplicability" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="CRGApplicability"/>
+		<property name="com.jaspersoft.studio.field.label" value="CRGApplicability"/>
+	</field>
+	<field name="NoCRGApplicabilityReason" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NoCRGApplicabilityReason"/>
+		<property name="com.jaspersoft.studio.field.label" value="NoCRGApplicabilityReason"/>
+	</field>
+	<field name="ISCRGApplicable" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ISCRGApplicable"/>
+		<property name="com.jaspersoft.studio.field.label" value="ISCRGApplicable"/>
+	</field>
+	<field name="RecommendedLoan" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="RecommendedLoan"/>
+		<property name="com.jaspersoft.studio.field.label" value="RecommendedLoan"/>
+	</field>
+	<field name="FinalDocumentTransfer" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FinalDocumentTransfer"/>
+		<property name="com.jaspersoft.studio.field.label" value="FinalDocumentTransfer"/>
+	</field>
+	<field name="PrevHighestNetExposure" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="PrevHighestNetExposure"/>
+		<property name="com.jaspersoft.studio.field.label" value="PrevHighestNetExposure"/>
+	</field>
+	<field name="Weakness" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Weakness"/>
+		<property name="com.jaspersoft.studio.field.label" value="Weakness"/>
+	</field>
+	<field name="ETPStatus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ETPStatus"/>
+		<property name="com.jaspersoft.studio.field.label" value="ETPStatus"/>
+	</field>
+	<field name="ETPRequirement" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ETPRequirement"/>
+		<property name="com.jaspersoft.studio.field.label" value="ETPRequirement"/>
+	</field>
+	<field name="ECCAvailability" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ECCAvailability"/>
+		<property name="com.jaspersoft.studio.field.label" value="ECCAvailability"/>
+	</field>
+	<field name="NatureofBusinessERM" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NatureofBusinessERM"/>
+		<property name="com.jaspersoft.studio.field.label" value="NatureofBusinessERM"/>
+	</field>
+	<field name="Division" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Division"/>
+		<property name="com.jaspersoft.studio.field.label" value="Division"/>
+	</field>
+	<field name="Region" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Region"/>
+		<property name="com.jaspersoft.studio.field.label" value="Region"/>
+	</field>
+	<field name="Upazilla" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Upazilla"/>
+		<property name="com.jaspersoft.studio.field.label" value="Upazilla"/>
+	</field>
+	<field name="BBCluster" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BBCluster"/>
+		<property name="com.jaspersoft.studio.field.label" value="BBCluster"/>
+	</field>
+	<field name="NatureofBusinessSector" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NatureofBusinessSector"/>
+		<property name="com.jaspersoft.studio.field.label" value="NatureofBusinessSector"/>
+	</field>
+	<field name="BBProduct" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BBProduct"/>
+		<property name="com.jaspersoft.studio.field.label" value="BBProduct"/>
+	</field>
+	<field name="ExpectedDisbursmentDate" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="ExpectedDisbursmentDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="ExpectedDisbursmentDate"/>
+	</field>
+	<field name="FreshLoan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FreshLoan"/>
+		<property name="com.jaspersoft.studio.field.label" value="FreshLoan"/>
+	</field>
+	<field name="CRMSecurityRemark" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CRMSecurityRemark"/>
+		<property name="com.jaspersoft.studio.field.label" value="CRMSecurityRemark"/>
+	</field>
+	<field name="SecurityMode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="SecurityMode"/>
+		<property name="com.jaspersoft.studio.field.label" value="SecurityMode"/>
+	</field>
+	<field name="DpDays" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DpDays"/>
+		<property name="com.jaspersoft.studio.field.label" value="DpDays"/>
+	</field>
+	<field name="IndustryType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="IndustryType"/>
+		<property name="com.jaspersoft.studio.field.label" value="IndustryType"/>
+	</field>
+	<field name="SecurityType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="SecurityType"/>
+		<property name="com.jaspersoft.studio.field.label" value="SecurityType"/>
+	</field>
+	<field name="CGSApplicable" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CGSApplicable"/>
+		<property name="com.jaspersoft.studio.field.label" value="CGSApplicable"/>
+	</field>
+	<field name="ESMSChecklistApplicability" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ESMSChecklistApplicability"/>
+		<property name="com.jaspersoft.studio.field.label" value="ESMSChecklistApplicability"/>
+	</field>
+	<field name="ClusterId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ClusterId"/>
+		<property name="com.jaspersoft.studio.field.label" value="ClusterId"/>
+	</field>
+	<field name="IsManual" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="IsManual"/>
+		<property name="com.jaspersoft.studio.field.label" value="IsManual"/>
+	</field>
+	<field name="PrevRefNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PrevRefNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="PrevRefNo"/>
+	</field>
+	<field name="IsManualCashSecurity" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="IsManualCashSecurity"/>
+		<property name="com.jaspersoft.studio.field.label" value="IsManualCashSecurity"/>
+	</field>
+	<field name="NetExposureText" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NetExposureText"/>
+		<property name="com.jaspersoft.studio.field.label" value="NetExposureText"/>
+	</field>
+	<field name="COLUMN_178" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BusinessChannel"/>
+		<property name="com.jaspersoft.studio.field.label" value="BusinessChannel"/>
+	</field>
+	<field name="FileCategory" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FileCategory"/>
+		<property name="com.jaspersoft.studio.field.label" value="FileCategory"/>
+	</field>
+	<field name="Activitiesnotlisted" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Activitiesnotlisted"/>
+		<property name="com.jaspersoft.studio.field.label" value="Activitiesnotlisted"/>
+	</field>
+	<field name="ECCApplicability" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ECCApplicability"/>
+		<property name="com.jaspersoft.studio.field.label" value="ECCApplicability"/>
+	</field>
+	<field name="CASANo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CASANo"/>
+		<property name="com.jaspersoft.studio.field.label" value="CASANo"/>
+	</field>
+	<field name="OSPRefNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OSPRefNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="OSPRefNo"/>
+	</field>
+	<field name="IsGroupLimit" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="IsGroupLimit"/>
+		<property name="com.jaspersoft.studio.field.label" value="IsGroupLimit"/>
+	</field>
+	<field name="TaggedReferenceNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TaggedReferenceNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="TaggedReferenceNo"/>
+	</field>
+	<field name="COLUMN_186" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="RefinancingScheme"/>
+		<property name="com.jaspersoft.studio.field.label" value="RefinancingScheme"/>
+	</field>
+	<field name="EMIDetails" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="EMIDetails"/>
+		<property name="com.jaspersoft.studio.field.label" value="EMIDetails"/>
+	</field>
+	<field name="MoratoriumDetails" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MoratoriumDetails"/>
+		<property name="com.jaspersoft.studio.field.label" value="MoratoriumDetails"/>
+	</field>
+	<field name="MoratoriumType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MoratoriumType"/>
+		<property name="com.jaspersoft.studio.field.label" value="MoratoriumType"/>
+	</field>
+	<field name="InitialRate" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="InitialRate"/>
+		<property name="com.jaspersoft.studio.field.label" value="InitialRate"/>
+	</field>
+	<field name="IsMoratorium" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="IsMoratorium"/>
+		<property name="com.jaspersoft.studio.field.label" value="IsMoratorium"/>
+	</field>
+	<field name="LPIRate" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="LPIRate"/>
+		<property name="com.jaspersoft.studio.field.label" value="LPIRate"/>
+	</field>
+	<field name="RepaymentMode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="RepaymentMode"/>
+		<property name="com.jaspersoft.studio.field.label" value="RepaymentMode"/>
+	</field>
+	<field name="RepaymentMethod" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="RepaymentMethod"/>
+		<property name="com.jaspersoft.studio.field.label" value="RepaymentMethod"/>
+	</field>
+	<field name="MoratoriumRate" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="MoratoriumRate"/>
+		<property name="com.jaspersoft.studio.field.label" value="MoratoriumRate"/>
+	</field>
+	<field name="FundedLiabInCIB" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FundedLiabInCIB"/>
+		<property name="com.jaspersoft.studio.field.label" value="FundedLiabInCIB"/>
+	</field>
+	<field name="ESMSRelatedActionPlan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ESMSRelatedActionPlan"/>
+		<property name="com.jaspersoft.studio.field.label" value="ESMSRelatedActionPlan"/>
+	</field>
+	<field name="AvailibilityPeriod" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="AvailibilityPeriod"/>
+		<property name="com.jaspersoft.studio.field.label" value="AvailibilityPeriod"/>
+	</field>
+	<field name="IdlcContribution" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="IdlcContribution"/>
+		<property name="com.jaspersoft.studio.field.label" value="IdlcContribution"/>
+	</field>
+	<field name="RateType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="RateType"/>
+		<property name="com.jaspersoft.studio.field.label" value="RateType"/>
+	</field>
+	<field name="CumulativeExposure" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="CumulativeExposure"/>
+		<property name="com.jaspersoft.studio.field.label" value="CumulativeExposure"/>
+	</field>
+	<field name="ApprovalType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ApprovalType"/>
+		<property name="com.jaspersoft.studio.field.label" value="ApprovalType"/>
+	</field>
+	<field name="IsInterchangeable" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="IsInterchangeable"/>
+		<property name="com.jaspersoft.studio.field.label" value="IsInterchangeable"/>
+	</field>
+	<field name="InterchangeableAmount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="InterchangeableAmount"/>
+		<property name="com.jaspersoft.studio.field.label" value="InterchangeableAmount"/>
+	</field>
+	<field name="GreenFinProduct" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="GreenFinProduct"/>
+		<property name="com.jaspersoft.studio.field.label" value="GreenFinProduct"/>
+	</field>
+	<field name="GreenFinProductRange" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="GreenFinProductRange"/>
+		<property name="com.jaspersoft.studio.field.label" value="GreenFinProductRange"/>
+	</field>
+	<field name="Sector" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Sector"/>
+		<property name="com.jaspersoft.studio.field.label" value="Sector"/>
+	</field>
+	<field name="SubSector" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="SubSector"/>
+		<property name="com.jaspersoft.studio.field.label" value="SubSector"/>
+	</field>
+	<field name="BBPurposeCode" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="BBPurposeCode"/>
+		<property name="com.jaspersoft.studio.field.label" value="BBPurposeCode"/>
+	</field>
+	<field name="BBSectorID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BBSectorID"/>
+		<property name="com.jaspersoft.studio.field.label" value="BBSectorID"/>
+	</field>
+	<field name="InterchangeableTo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="InterchangeableTo"/>
+		<property name="com.jaspersoft.studio.field.label" value="InterchangeableTo"/>
+	</field>
+	<field name="ExpectedFileSubmissionDate" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="ExpectedFileSubmissionDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="ExpectedFileSubmissionDate"/>
+	</field>
+	<field name="WorkflowStage" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="WorkflowStage"/>
+		<property name="com.jaspersoft.studio.field.label" value="WorkflowStage"/>
+	</field>
+	<field name="IsManualMarginSpread" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.name" value="IsManualMarginSpread"/>
+		<property name="com.jaspersoft.studio.field.label" value="IsManualMarginSpread"/>
+	</field>
+	<field name="PPGCategory" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PPGCategory"/>
+		<property name="com.jaspersoft.studio.field.label" value="PPGCategory"/>
+	</field>
+	<field name="GroupSize" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="GroupSize"/>
+		<property name="com.jaspersoft.studio.field.label" value="GroupSize"/>
+	</field>
+	<field name="PaymentTo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PaymentTo"/>
+		<property name="com.jaspersoft.studio.field.label" value="PaymentTo"/>
+	</field>
+	<field name="UnitName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="UnitName"/>
+		<property name="com.jaspersoft.studio.field.label" value="UnitName"/>
+	</field>
+	<field name="ProbabilityDefault" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ProbabilityDefault"/>
+		<property name="com.jaspersoft.studio.field.label" value="ProbabilityDefault"/>
+	</field>
+	<field name="OptionOfFinancing" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="OptionOfFinancing"/>
+		<property name="com.jaspersoft.studio.field.label" value="OptionOfFinancing"/>
+	</field>
+	<field name="AssetTypeCode" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="AssetTypeCode"/>
+		<property name="com.jaspersoft.studio.field.label" value="AssetTypeCode"/>
+	</field>
+	<field name="GasConnection" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="GasConnection"/>
+		<property name="com.jaspersoft.studio.field.label" value="GasConnection"/>
+	</field>
+	<field name="ElectricityConnection" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ElectricityConnection"/>
+		<property name="com.jaspersoft.studio.field.label" value="ElectricityConnection"/>
+	</field>
+	<field name="OrganicFarming" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OrganicFarming"/>
+		<property name="com.jaspersoft.studio.field.label" value="OrganicFarming"/>
+	</field>
+	<field name="VehicleType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="VehicleType"/>
+		<property name="com.jaspersoft.studio.field.label" value="VehicleType"/>
+	</field>
+	<field name="GracePeriod" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="GracePeriod"/>
+		<property name="com.jaspersoft.studio.field.label" value="GracePeriod"/>
+	</field>
+	<field name="ESDDDate" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="ESDDDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="ESDDDate"/>
+	</field>
+	<field name="AdvanceEmi" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="AdvanceEmi"/>
+		<property name="com.jaspersoft.studio.field.label" value="AdvanceEmi"/>
+	</field>
+	<field name="BinRegNo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="BinRegNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="BinRegNo"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="336" splitType="Stretch">
+		<element kind="staticText" uuid="0be42b8a-2c23-45d7-80ce-06a455684820" x="0" y="10" width="560" height="80" fontName="SansSerif" hTextAlign="Justified">
+			<text><![CDATA[Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.]]></text>
+		</element>
+		<element kind="component" uuid="497bb0e9-da3d-4f2b-ad13-f9384a265838" stretchType="ElementGroupHeight" x="0" y="109" width="557" height="100">
+			<component kind="table">
+				<datasetRun uuid="d446b090-beb2-4aee-aed6-ec4eb6806b6c" subDataset="TableDataSet">
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<parameter name="ReferenceNo">
+						<expression><![CDATA[$P{ReferenceNo}]]></expression>
+					</parameter>
+				</datasetRun>
+				<column kind="single" uuid="5b3a37de-5643-4818-8b04-e847af17aa53" width="80">
+					<tableHeader height="30" rowSpan="1" style="Table 1_TH">
+						<element kind="staticText" uuid="6481e2bd-e564-40cb-b6ea-eb43cf5f5441" x="0" y="0" width="80" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
+							<text><![CDATA[Sample Table]]></text>
+						</element>
+					</tableHeader>
+					<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+						<element kind="staticText" uuid="ef0f1fc6-5866-44b4-95fd-7216377734da" x="0" y="0" width="80" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
+							<text><![CDATA[ProspectID]]></text>
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						</element>
+					</columnHeader>
+					<detailCell height="30" style="Table 1_TD">
+						<element kind="textField" uuid="b46016c8-f41f-4412-a6a3-15bdf1a48ff9" x="0" y="0" width="80" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
+							<expression><![CDATA[$F{ProspectID}]]></expression>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+				</column>
+				<column kind="single" uuid="c93e064a-a19d-4b83-82da-b8c64a936f2f" width="90">
+					<tableHeader height="30" rowSpan="1" style="Table 1_TH"/>
+					<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+						<element kind="staticText" uuid="27c08c87-72af-40a4-be6b-e836d7a2c9b8" x="0" y="0" width="90" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
+							<text><![CDATA[LeadReferenceNo]]></text>
+						</element>
+					</columnHeader>
+					<detailCell height="30" style="Table 1_TD">
+						<element kind="textField" uuid="2de65a09-cde2-4489-a5e2-8af51260b884" x="0" y="0" width="90" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
+							<expression><![CDATA[$F{LeadReferenceNo}]]></expression>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+				</column>
+				<column kind="single" uuid="8d8e243c-fccf-4060-9e1d-42c1d5707ccf" width="80">
+					<tableHeader height="30" rowSpan="1" style="Table 1_TH"/>
+					<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+						<element kind="staticText" uuid="2ade8294-472c-4544-8626-309232e245b9" x="0" y="0" width="80" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
+							<text><![CDATA[EntryBy]]></text>
+						</element>
+					</columnHeader>
+					<detailCell height="30" style="Table 1_TD">
+						<element kind="textField" uuid="f7e3b585-15b5-4e75-91e8-2506c3c1975a" x="0" y="0" width="80" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
+							<expression><![CDATA[$F{EntryBy}]]></expression>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+				</column>
+				<column kind="single" uuid="bdc9cfac-3036-499d-a730-c030bc7c94b1" width="110">
+					<tableHeader height="30" rowSpan="1" style="Table 1_TH"/>
+					<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+						<element kind="staticText" uuid="7f4ada1d-0996-41a0-b41e-e064c128e5df" x="0" y="0" width="110" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
+							<text><![CDATA[RelationshipwithIDLC]]></text>
+						</element>
+					</columnHeader>
+					<detailCell height="30" style="Table 1_TD">
+						<element kind="textField" uuid="29b55d6b-4bda-4856-a2c4-649dc23f02fc" x="0" y="0" width="110" height="30" fontName="SansSerif" hTextAlign="Center" vTextAlign="Middle">
+							<expression><![CDATA[$F{RelationshipwithIDLC}]]></expression>
+						</element>
+					</detailCell>
+					<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+				</column>
+			</component>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+			<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+			<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+			<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+		</element>
+		<element kind="staticText" uuid="200af28f-f58f-43a2-a64d-c2f9b0f257b2" x="0" y="256" width="560" height="80" fontName="SansSerif" hTextAlign="Justified">
+			<text><![CDATA[Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.]]></text>
+		</element>
+	</title>
+	<pageFooter height="32" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
