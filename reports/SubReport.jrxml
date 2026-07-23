@@ -1,0 +1,44 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="SubReport" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dbab2e9e-ad93-4651-9da9-37537b6feec8">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Andromeda GG"/>
+	<parameter name="ProspectID" class="java.lang.String"/>
+	<query language="SQL"><![CDATA[udspCrp_rptAffidavitRequirementListForSME 115043]]></query>
+	<field name="prospectID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="prospectID"/>
+		<property name="com.jaspersoft.studio.field.label" value="prospectID"/>
+	</field>
+	<field name="ID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+	</field>
+	<field name="DocumentType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DocumentType"/>
+		<property name="com.jaspersoft.studio.field.label" value="DocumentType"/>
+	</field>
+	<field name="DocumentName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DocumentName"/>
+		<property name="com.jaspersoft.studio.field.label" value="DocumentName"/>
+	</field>
+	<field name="DocIdentificationNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DocIdentificationNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="DocIdentificationNo"/>
+	</field>
+	<field name="Relationship" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Relationship"/>
+		<property name="com.jaspersoft.studio.field.label" value="Relationship"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch"/>
+	<pageHeader height="41" splitType="Stretch">
+		<element kind="textField" uuid="092ee265-b3d2-4c41-a72a-a7cc27ebee0d" x="134" y="11" width="100" height="30">
+			<expression><![CDATA[$F{DocumentName}]]></expression>
+		</element>
+	</pageHeader>
+	<detail>
+		<band height="49" splitType="Stretch"/>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

@@ -1,0 +1,107 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="Projection" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="640ff92e-1061-41ee-be41-c56f49dd04de">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Andromeda GG"/>
+	<parameter name="LeadReferenceNo" class="java.lang.String"/>
+	<parameter name="CIF" class="java.lang.String"/>
+	<parameter name="MobileNo" class="java.lang.String"/>
+	<query language="SQL"><![CDATA[EXEC udspCRP_LstDisbursementProjection $P{LeadReferenceNo},$P{CIF},$P{MobileNo}]]></query>
+	<field name="ProspectID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="ProspectID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ProspectID"/>
+	</field>
+	<field name="LeadReferenceNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LeadReferenceNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="LeadReferenceNo"/>
+	</field>
+	<field name="AuthDateAppraisal" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="AuthDateAppraisal"/>
+		<property name="com.jaspersoft.studio.field.label" value="AuthDateAppraisal"/>
+	</field>
+	<field name="AuthStatusAppraisal" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="AuthStatusAppraisal"/>
+		<property name="com.jaspersoft.studio.field.label" value="AuthStatusAppraisal"/>
+	</field>
+	<field name="CustomerNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CustomerNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="CustomerNo"/>
+	</field>
+	<field name="CustomerName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CustomerName"/>
+		<property name="com.jaspersoft.studio.field.label" value="CustomerName"/>
+	</field>
+	<field name="DisbProjectionID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="DisbProjectionID"/>
+		<property name="com.jaspersoft.studio.field.label" value="DisbProjectionID"/>
+	</field>
+	<field name="ExpectedDisbursementDate" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="ExpectedDisbursementDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="ExpectedDisbursementDate"/>
+	</field>
+	<field name="MakeDate" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="MakeDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="MakeDate"/>
+	</field>
+	<field name="UpdateDate" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="UpdateDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="UpdateDate"/>
+	</field>
+	<field name="FundProjectionDate" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="FundProjectionDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="FundProjectionDate"/>
+	</field>
+	<field name="ProjectedAmount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ProjectedAmount"/>
+		<property name="com.jaspersoft.studio.field.label" value="ProjectedAmount"/>
+	</field>
+	<field name="DO_Remarks_With_Pending" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DO_Remarks_With_Pending"/>
+		<property name="com.jaspersoft.studio.field.label" value="DO_Remarks_With_Pending"/>
+	</field>
+	<field name="DO_Remarks_For_Not_Disbursed" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DO_Remarks_For_Not_Disbursed"/>
+		<property name="com.jaspersoft.studio.field.label" value="DO_Remarks_For_Not_Disbursed"/>
+	</field>
+	<field name="Appraisal" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Appraisal"/>
+		<property name="com.jaspersoft.studio.field.label" value="Appraisal"/>
+	</field>
+	<field name="LegalVetting" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LegalVetting"/>
+		<property name="com.jaspersoft.studio.field.label" value="LegalVetting"/>
+	</field>
+	<field name="TechnicalReport" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TechnicalReport"/>
+		<property name="com.jaspersoft.studio.field.label" value="TechnicalReport"/>
+	</field>
+	<field name="CustomerAddress" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CustomerAddress"/>
+		<property name="com.jaspersoft.studio.field.label" value="CustomerAddress"/>
+	</field>
+	<field name="SanctionAmount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="SanctionAmount"/>
+		<property name="com.jaspersoft.studio.field.label" value="SanctionAmount"/>
+	</field>
+	<field name="AMOUNT_DISBURSED" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="AMOUNT_DISBURSED"/>
+		<property name="com.jaspersoft.studio.field.label" value="AMOUNT_DISBURSED"/>
+	</field>
+	<field name="CutoffApprovalStatus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="CutoffApprovalStatus"/>
+		<property name="com.jaspersoft.studio.field.label" value="CutoffApprovalStatus"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch"/>
+	<pageHeader height="38" splitType="Stretch">
+		<element kind="textField" uuid="42f6b5ab-7c82-4e9f-a94f-26584de3bf77" x="70" y="8" width="100" height="30">
+			<expression><![CDATA[$F{CustomerName}]]></expression>
+		</element>
+	</pageHeader>
+	<columnHeader height="61" splitType="Stretch"/>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>

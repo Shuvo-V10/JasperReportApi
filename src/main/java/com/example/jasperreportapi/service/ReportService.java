@@ -1,6 +1,7 @@
 package com.example.jasperreportapi.service;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,6 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.sql.DataSource;
@@ -40,12 +42,36 @@ public class ReportService {
     public byte[] generateReportPdf(String reportName, Map<String, Object> params)throws JRException, IOException 
     {
 
-        Path jrxmlPath = Paths.get(reportsDirectory, reportName + ".jrxml");
+        // 1. Convert to File to get the Absolute Path (fixes working directory issues)
+        File reportsDirFile = new File(reportsDirectory);   
+
+        // Optional: Add a check to ensure the directory actually exists
+        if (!reportsDirFile.exists() || !reportsDirFile.isDirectory()) {
+            throw new FileNotFoundException("Reports directory not found at absolute path: " + reportsDirFile.getAbsolutePath());
+        }
+
+        Path jrxmlPath = Paths.get(reportsDirFile.getAbsolutePath(), reportName + ".jrxml");
 
         if (!jrxmlPath.toFile().exists()) 
         {
-            throw new FileNotFoundException("Report not found: " + jrxmlPath);
+            throw new FileNotFoundException("Report not found: " + jrxmlPath.toAbsolutePath());
         }
+
+        if (params == null) 
+        {
+            params = new HashMap<>();
+        }
+
+          // 2. Use Absolute Path and ensure it ends with a forward slash "/"
+        String absoluteSubReportDir = reportsDirFile.getAbsolutePath().replace("\\", "/") + "/";
+        params.put("SUBREPORT_DIRECTORY", absoluteSubReportDir);  
+
+        //params.put("SUBREPORT_DIR", reportsDirectory + File.separator);   // <-- new
+
+        System.out.println("Looking for subreports in: " + params.get("SUBREPORT_DIRECTORY"));
+        System.out.println("Full expected path: " + params.get("SUBREPORT_DIRECTORY") + "SubReport.jasper");
+
+
 
         try (InputStream reportStream = new FileInputStream(jrxmlPath.toFile()))
         {
