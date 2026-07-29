@@ -1,0 +1,10 @@
+services:
+  jasperreportapi:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    environment:
+      - REPORTS_DIRECTORY=/app/reports
+    volumes:
+      - "C:/reports:/app/reports"

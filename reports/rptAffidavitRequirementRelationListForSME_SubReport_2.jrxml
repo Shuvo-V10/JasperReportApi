@@ -1,0 +1,36 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="rptAffidavitRequirementRelationListForSME_SubReport_2" language="java" columnCount="1" pageWidth="595" pageHeight="842" orientation="Landscape" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="6f671e6b-aa9d-48e8-be32-e362e1094004">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Andromeda GG"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="ProspectID" class="java.lang.String"/>
+	<query language="SQL"><![CDATA[udspCrp_rptAffidavitRequirementRelationListForSME $P{ProspectID}]]></query>
+	<field name="prospectID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="prospectID"/>
+		<property name="com.jaspersoft.studio.field.label" value="prospectID"/>
+	</field>
+	<field name="DocumentName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DocumentName"/>
+		<property name="com.jaspersoft.studio.field.label" value="DocumentName"/>
+	</field>
+	<field name="Relationship" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Relationship"/>
+		<property name="com.jaspersoft.studio.field.label" value="Relationship"/>
+	</field>
+	<background splitType="Stretch"/>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<element kind="textField" uuid="5c89c506-0768-4453-8463-eea1ad666306" x="2" y="2" width="593" height="37" fontSize="11.0">
+				<expression><![CDATA["5. That though " + $F{Relationship} + "name has been written in differently in different documents bearing the names" + $F{DocumentName}+" is the same person & if any problem arises in future for the above stated reason then I will be liable for this issues."]]></expression>
+			</element>
+		</band>
+	</detail>
+</jasperReport>

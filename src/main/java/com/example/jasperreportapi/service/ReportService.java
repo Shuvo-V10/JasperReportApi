@@ -9,7 +9,10 @@ import java.io.InputStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,8 +30,11 @@ import net.sf.jasperreports.export.SimpleExporterInput;
 import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
 import net.sf.jasperreports.pdf.JRPdfExporter;
 
+
 @Service
 public class ReportService {
+
+
 
     private final DataSource dataSource;
     private final String reportsDirectory;
@@ -46,9 +52,10 @@ public class ReportService {
         File reportsDirFile = new File(reportsDirectory);   
 
         // Optional: Add a check to ensure the directory actually exists
-        if (!reportsDirFile.exists() || !reportsDirFile.isDirectory()) {
-            throw new FileNotFoundException("Reports directory not found at absolute path: " + reportsDirFile.getAbsolutePath());
-        }
+        // if (!reportsDirFile.exists() || !reportsDirFile.isDirectory()) {
+        //     throw new FileNotFoundException("Reports directory not found at absolute path: " + reportsDirFile.getAbsolutePath());
+        // }
+        
 
         Path jrxmlPath = Paths.get(reportsDirFile.getAbsolutePath(), reportName + ".jrxml");
 
@@ -57,20 +64,49 @@ public class ReportService {
             throw new FileNotFoundException("Report not found: " + jrxmlPath.toAbsolutePath());
         }
 
-        if (params == null) 
-        {
+        // if (params == null) 
+        // {
+        //     params = new HashMap<>();
+        // }
+
+        if (params == null) {
             params = new HashMap<>();
+        } 
+        // new for java date parsing
+        else {
+            // Sanitize and convert date strings to java.sql.Date
+            Map<String, Object> formattedParams = new HashMap<>();
+            for (Map.Entry<String, Object> entry : params.entrySet()) {
+                Object value = entry.getValue();
+
+                if (value instanceof String strVal) {
+                    strVal = strVal.trim();
+                    if (strVal.isEmpty()) {
+                        formattedParams.put(entry.getKey(), null);
+                    } else if (strVal.matches("^\\d{4}-\\d{2}-\\d{2}$")) { 
+                        // Matches YYYY-MM-DD format
+                        try {
+                            formattedParams.put(entry.getKey(), Date.valueOf(LocalDate.parse(strVal)));
+                        } catch (DateTimeParseException e) {
+                            formattedParams.put(entry.getKey(), strVal);
+                        }
+                    } else {
+                        formattedParams.put(entry.getKey(), strVal);
+                    }
+                } else {
+                    formattedParams.put(entry.getKey(), value);
+                }
+            }
+            params = formattedParams;
         }
+
+       
 
           // 2. Use Absolute Path and ensure it ends with a forward slash "/"
         String absoluteSubReportDir = reportsDirFile.getAbsolutePath().replace("\\", "/") + "/";
         params.put("SUBREPORT_DIRECTORY", absoluteSubReportDir);  
 
         //params.put("SUBREPORT_DIR", reportsDirectory + File.separator);   // <-- new
-
-        System.out.println("Looking for subreports in: " + params.get("SUBREPORT_DIRECTORY"));
-        System.out.println("Full expected path: " + params.get("SUBREPORT_DIRECTORY") + "SubReport.jasper");
-
 
 
         try (InputStream reportStream = new FileInputStream(jrxmlPath.toFile()))
@@ -87,6 +123,8 @@ public class ReportService {
                 exporter.setExporterOutput(new SimpleOutputStreamExporterOutput(outputStream));
                 exporter.exportReport();
 
+                
+
                 return outputStream.toByteArray();
             } 
             catch (SQLException e) 
@@ -94,6 +132,8 @@ public class ReportService {
                 throw new JRException("Failed to obtain database connection for report", e);
             }
         }
+
+        
     }
 
     public byte[] generateDemoReportPdf(String referenceNo) throws JRException, IOException 

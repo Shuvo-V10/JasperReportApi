@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "report.templates.path",
+      "type": "java.lang.String",
+      "description": "Filesystem folder where .jrxml report templates are loaded from."
+    }
+  ]
+}

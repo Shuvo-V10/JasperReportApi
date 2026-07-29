@@ -1,0 +1,48 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="rptAffidavitRequirementListForSME_SubReport_1" language="java" columnCount="1" pageWidth="595" pageHeight="842" orientation="Landscape" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="eedfa8ab-6772-428d-8953-6e939390b343">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Andromeda GG"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="ProspectID" class="java.lang.String"/>
+	<query language="SQL"><![CDATA[udspCrp_rptAffidavitRequirementListForSME $P{ProspectID}]]></query>
+	<field name="prospectID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="prospectID"/>
+		<property name="com.jaspersoft.studio.field.label" value="prospectID"/>
+	</field>
+	<field name="ID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="ID"/>
+	</field>
+	<field name="DocumentType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DocumentType"/>
+		<property name="com.jaspersoft.studio.field.label" value="DocumentType"/>
+	</field>
+	<field name="DocumentName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DocumentName"/>
+		<property name="com.jaspersoft.studio.field.label" value="DocumentName"/>
+	</field>
+	<field name="DocIdentificationNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DocIdentificationNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="DocIdentificationNo"/>
+	</field>
+	<field name="Relationship" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Relationship"/>
+		<property name="com.jaspersoft.studio.field.label" value="Relationship"/>
+	</field>
+	<background splitType="Stretch"/>
+	<detail>
+		<band height="32">
+			<element kind="textField" uuid="3072ba54-0d2d-4399-8ad3-eeeefc04b4e0" x="0" y="2" width="595" height="30" fontSize="11.0" hTextAlign="Justified">
+				<expression><![CDATA["3. " + "That in my " + $F{DocumentType} +  "bearing No. " + $F{DocIdentificationNo} + ", " +$F{Relationship} + " name was mentioned as "  + $F{DocumentName} + ". "]]></expression>
+			</element>
+		</band>
+	</detail>
+</jasperReport>

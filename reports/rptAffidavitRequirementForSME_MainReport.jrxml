@@ -1,0 +1,146 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="rptAffidavitRequirementForSME_MainReport" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f8d34111-56a3-42db-9307-9577b6a821e2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Andromeda GG"/>
+	<parameter name="ProspectID" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIRECTORY" class="java.lang.String"/>
+	<query language="SQL"><![CDATA[udspCrp_rptDOMandAffidavitForSME $P{ProspectID}]]></query>
+	<field name="prospectID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="prospectID"/>
+		<property name="com.jaspersoft.studio.field.label" value="prospectID"/>
+	</field>
+	<field name="AuthDateAppraisal" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="AuthDateAppraisal"/>
+		<property name="com.jaspersoft.studio.field.label" value="AuthDateAppraisal"/>
+	</field>
+	<field name="AmountSanctioned" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="AmountSanctioned"/>
+		<property name="com.jaspersoft.studio.field.label" value="AmountSanctioned"/>
+	</field>
+	<field name="InterestRate" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="InterestRate"/>
+		<property name="com.jaspersoft.studio.field.label" value="InterestRate"/>
+	</field>
+	<field name="SanctionAmountInWords" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="SanctionAmountInWords"/>
+		<property name="com.jaspersoft.studio.field.label" value="SanctionAmountInWords"/>
+	</field>
+	<field name="BusinessName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BusinessName"/>
+		<property name="com.jaspersoft.studio.field.label" value="BusinessName"/>
+	</field>
+	<field name="Address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Address"/>
+		<property name="com.jaspersoft.studio.field.label" value="Address"/>
+	</field>
+	<field name="Owners" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Owners"/>
+		<property name="com.jaspersoft.studio.field.label" value="Owners"/>
+	</field>
+	<field name="OwnerType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OwnerType"/>
+		<property name="com.jaspersoft.studio.field.label" value="OwnerType"/>
+	</field>
+	<field name="OwnerAddress" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OwnerAddress"/>
+		<property name="com.jaspersoft.studio.field.label" value="OwnerAddress"/>
+	</field>
+	<field name="LeadReferenceNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LeadReferenceNo"/>
+		<property name="com.jaspersoft.studio.field.label" value="LeadReferenceNo"/>
+	</field>
+	<field name="EMI" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="EMI"/>
+		<property name="com.jaspersoft.studio.field.label" value="EMI"/>
+	</field>
+	<field name="TermInMonth" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="TermInMonth"/>
+		<property name="com.jaspersoft.studio.field.label" value="TermInMonth"/>
+	</field>
+	<field name="TakeOverIDLC" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TakeOverIDLC"/>
+		<property name="com.jaspersoft.studio.field.label" value="TakeOverIDLC"/>
+	</field>
+	<field name="Branch" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Branch"/>
+		<property name="com.jaspersoft.studio.field.label" value="Branch"/>
+	</field>
+	<field name="LoanPurposeType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LoanPurposeType"/>
+		<property name="com.jaspersoft.studio.field.label" value="LoanPurposeType"/>
+	</field>
+	<field name="OwnerInfo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OwnerInfo"/>
+		<property name="com.jaspersoft.studio.field.label" value="OwnerInfo"/>
+	</field>
+	<field name="LegalStatusType" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="LegalStatusType"/>
+		<property name="com.jaspersoft.studio.field.label" value="LegalStatusType"/>
+	</field>
+	<field name="Product" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Product"/>
+		<property name="com.jaspersoft.studio.field.label" value="Product"/>
+	</field>
+	<field name="OwnerFatherName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OwnerFatherName"/>
+		<property name="com.jaspersoft.studio.field.label" value="OwnerFatherName"/>
+	</field>
+	<field name="OwnerMotherName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="OwnerMotherName"/>
+		<property name="com.jaspersoft.studio.field.label" value="OwnerMotherName"/>
+	</field>
+	<field name="NID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="NID"/>
+		<property name="com.jaspersoft.studio.field.label" value="NID"/>
+	</field>
+	<field name="Relationship" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Relationship"/>
+		<property name="com.jaspersoft.studio.field.label" value="Relationship"/>
+	</field>
+	<field name="DocumentName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DocumentName"/>
+		<property name="com.jaspersoft.studio.field.label" value="DocumentName"/>
+	</field>
+	<background splitType="Stretch"/>
+	<pageHeader height="159" splitType="Stretch">
+		<element kind="staticText" uuid="924bfd80-d3f6-4ce5-ad39-8509e047bb90" x="220" y="0" width="100" height="30" fontSize="12.0" bold="true" underline="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Affidavit]]></text>
+		</element>
+		<element kind="textField" uuid="c03b0abb-6cfc-4690-8e7a-0cdec23a7532" positionType="Float" x="1" y="53" width="555" height="30" fontSize="11.0" textAdjust="StretchHeight" hTextAlign="Justified">
+			<expression><![CDATA["I, " + $F{Owners} +", "+ $F{OwnerType} + "of " +  $F{BusinessName} +  $F{OwnerInfo} + ", "+ "do hereby solemnly affirm and declare as follows:" ]]></expression>
+			<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+		</element>
+		<element kind="textField" uuid="9b846ff5-513b-4330-ac34-17de9d9fe865" positionType="Float" x="1" y="93" width="555" height="30" fontSize="11.0" textAdjust="StretchHeight" hTextAlign="Justified">
+			<expression><![CDATA["1. That I am a bona fide citizen of Bangladesh and permanent resident of Bangladesh having Bangladesh nationality by birth."]]></expression>
+			<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+		</element>
+		<element kind="textField" uuid="7a725acb-4b33-4286-907e-533ac941cbb6" positionType="Float" x="1" y="126" width="555" height="30" fontSize="11.0" textAdjust="StretchHeight" hTextAlign="Justified">
+			<expression><![CDATA["2. That in my National Identification Card, bearing No. " + $F{NID}+", "+ "my father’s name was mentioned as " + $F{OwnerFatherName} + " and my mother’s name was mentioned as " +  $F{OwnerMotherName} + ". "]]></expression>
+			<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+		</element>
+	</pageHeader>
+	<detail>
+		<band height="53" splitType="Stretch">
+			<element kind="subreport" uuid="7e47f6f4-448b-4a31-947c-5a1648c462dc" x="1" y="0" width="552" height="50" usingCache="false">
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<expression><![CDATA[$P{SUBREPORT_DIRECTORY} + "rptAffidavitRequirementListForSME_SubReport_1.jasper"]]></expression>
+				<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				<parameter name="ProspectID">
+					<expression><![CDATA[$P{ProspectID}]]></expression>
+				</parameter>
+			</element>
+		</band>
+		<band height="78">
+			<element kind="subreport" uuid="4b1867dc-7458-423e-8885-ed7c9f3b5085" x="0" y="4" width="552" height="70">
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<expression><![CDATA[$P{SUBREPORT_DIRECTORY} + "rptAffidavitRequirementRelationListForSME_SubReport_2.jasper"]]></expression>
+				<parameter name="ProspectID">
+					<expression><![CDATA[$P{ProspectID}]]></expression>
+				</parameter>
+			</element>
+		</band>
+	</detail>
+</jasperReport>
