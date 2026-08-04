@@ -1,9 +1,9 @@
 <!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
 <jasperReport name="account_statement_deposit" language="java" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="10" uuid="6e7650f8-3148-48bc-a43c-1bbad7205884" summaryNewPage="true">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="ireport.jasperserver.url" value="http://192.168.110.131:8080/jasperserver/"/>
+	<property name="ireport.jasperserver.url" value="http://192.168.201.134:8080/jasperserver/"/>
 	<property name="ireport.jasperserver.user" value="jasperadmin"/>
-	<property name="ireport.jasperserver.report.resource" value="/reports/IDLC/account_statement_deposit_files/main_jrxml"/>
+	<property name="ireport.jasperserver.report.resource" value="/reports/AbabilNG/account_statement_deposit_files/main_jrxml"/>
 	<property name="ireport.jasperserver.reportUnit" value="/reports/IDLC/account_statement_deposit"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="420"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="580"/>
@@ -113,8 +113,7 @@ order by TRDATE,ID,TRTRDID]]></query>
 	<parameter name="IS_HL" evaluationTime="Early" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[(int) 0]]></defaultValueExpression>
 	</parameter>
-	<query language="SQL"><![CDATA[/* Formatted on 29/Jun/21 8:12:01 PM (QP5 v5.256.13226.35510) */
-SELECT CUCODE,
+	<query language="SQL"><![CDATA[SELECT CUCODE,
        CURRENCY_CODE,
        CURR_DATE,
        COUNTRY_ID,
@@ -127,6 +126,8 @@ SELECT CUCODE,
        CUSADDRESS,
        ACCCODE,
        BRANCHID,
+       BRNAME,
+       BRADDRESS,
        ADDADDRESS1,
        PRODUCTTYPE,
        PRODUCT_NAME,
@@ -134,7 +135,8 @@ SELECT CUCODE,
        DESCRIPTION,
        LASTTXNDATE,
        PHONE,
-       STATUS,balance
+       STATUS,
+       balance
   FROM (SELECT ACC.NAME AS cucode,
                acc.CURRENCY_CODE,
                get_current_date curr_date,
@@ -177,7 +179,7 @@ SELECT CUCODE,
                      FROM COUNTRY
                     WHERE ID = acc.COUNTRY_ID)
                   faccaddress,
-                  cc.ADDRESS_LINE cadd,
+               cc.ADDRESS_LINE cadd,
                   cc.ADDRESS_LINE
                || ','
                || cc.ADDRESS_LINE_TWO
@@ -192,18 +194,17 @@ SELECT CUCODE,
                     WHERE ID = cc.DISTRICT_ID)
                   cusaddress,
                acc.code acccode,
-               (SELECT BRANCH_ID
-                  FROM ACCOUNTS
-                 WHERE CODE =   $P{AC_NO} )
-                  BRANCHID,
-               null
-                  AS ADDADDRESS1,
+               acc.BRANCH_ID BRANCHID,
+               br.bname BRNAME,
+               br.baddress BRADDRESS,
+               NULL AS ADDADDRESS1,
                DECODE (P.TYPE,
                        'DEMAND_DEPOSIT', 'DEMAND DEPOSIT',
                        'RECURRING_DEPOSIT', 'RECURRING DEPOSIT',
                        'FIXED_DEPOSIT', 'FIXED DEPOSIT',
                        'other')
-                  AS PRODUCTTYPE,P.NAME PRODUCT_NAME,
+                  AS PRODUCTTYPE,
+               P.NAME PRODUCT_NAME,
                OPENING_DATE AS OPENDATE,
                p.DESCRIPTION,
                LAST_CLIENT_TRANSACTION_DATE AS LASTTXNDATE,
@@ -212,19 +213,22 @@ SELECT CUCODE,
                           acc.PHONE_NUMBER || ', ')
                || acc.MOBILE_NUMBER
                   Phone,
-               acc.STATUS,CB.CURRENT_BALANCE balance
+               acc.STATUS,
+               CB.CURRENT_BALANCE balance
           FROM ACCOUNTS acc,
                CASA_BALANCES CB,
                PRODUCTS P,
-               cis_customer cc
-         WHERE     ACC.code =   $P{AC_NO} 
+               cis_customer cc,
+               branch br
+         WHERE     ACC.code = $P{AC_NO}
                AND ACC.PRODUCT_ID = P.ID
                AND ACC.ID = CB.ACCOUNT_ID(+)
                AND cc.CUSID = ACC.CUSTOMER_ID
                AND cc.CUSTOMER_TYPE = 'INDIVIDUAL_SINGLE'
-               and CC.CUSID not in (select CUS_ID from cis_subject)
-               UNION 
-               SELECT ACC.NAME AS cucode,
+               AND CC.CUSID NOT IN (SELECT CUS_ID FROM cis_subject)
+               AND ACC.Branch_Id = br.bid(+)
+        UNION
+        SELECT ACC.NAME AS cucode,
                acc.CURRENCY_CODE,
                get_current_date curr_date,
                acc.country_id,
@@ -281,10 +285,9 @@ SELECT CUCODE,
                     WHERE ID = CIS_CUSTOMER.DISTRICT_ID)
                   cusaddress,
                acc.code acccode,
-               (SELECT BRANCH_ID
-                  FROM ACCOUNTS
-                 WHERE CODE =  $P{AC_NO} )
-                  BRANCHID,
+               acc.BRANCH_ID BRANCHID,
+               br.bname BRNAME,
+               br.baddress BRADDRESS,
                (CASE
                    WHEN MAILING_ADDRESS = 'PRESENT_ADDRESS'
                    THEN
@@ -334,8 +337,8 @@ SELECT CUCODE,
                        'RECURRING_DEPOSIT', 'RECURRING DEPOSIT',
                        'FIXED_DEPOSIT', 'FIXED DEPOSIT',
                        'other')
-                  AS PRODUCTTYPE,P.NAME PRODUCT_NAME,
-                  
+                  AS PRODUCTTYPE,
+               P.NAME PRODUCT_NAME,
                OPENING_DATE AS OPENDATE,
                p.DESCRIPTION,
                LAST_CLIENT_TRANSACTION_DATE AS LASTTXNDATE,
@@ -344,14 +347,16 @@ SELECT CUCODE,
                           acc.PHONE_NUMBER || ', ')
                || acc.MOBILE_NUMBER
                   Phone,
-               acc.STATUS,CB.CURRENT_BALANCE balance
+               acc.STATUS,
+               CB.CURRENT_BALANCE balance
           FROM ACCOUNTS acc,
                CASA_BALANCES CB,
                PRODUCTS P,
                CIS_INDIVIDUAL_INFORMATION,
                CIS_SUBJECT,
-               cis_customer
-         WHERE     ACC.code =  $P{AC_NO}
+               cis_customer,
+               branch br
+         WHERE     ACC.code = $P{AC_NO}
                AND ACC.PRODUCT_ID = P.ID
                AND ACC.ID = CB.ACCOUNT_ID(+)
                AND ACC.CUSTOMER_ID = CIS_SUBJECT.CUS_ID
@@ -362,14 +367,15 @@ SELECT CUCODE,
                       (SELECT MIN (C.SUBJECT_ID)
                          FROM CIS_SUBJECT c
                         WHERE cis_customer.CUSID = c.CUS_ID)
-                        UNION
-                        SELECT ACC.NAME AS cucode,
+               AND ACC.Branch_Id = br.bid(+)
+        UNION
+        SELECT ACC.NAME AS cucode,
                acc.CURRENCY_CODE,
                get_current_date curr_date,
                acc.country_id,
                acc.ID accid,
                acc.ADDRESS_LINE,
-                   acc.ADDRESS_LINE
+                  acc.ADDRESS_LINE
                || ','
                || acc.ADDRESS_LINE_TWO
                || ','
@@ -420,10 +426,9 @@ SELECT CUCODE,
                     WHERE ID = CIS_CUSTOMER.DISTRICT_ID)
                   cusaddress,
                acc.code acccode,
-               (SELECT BRANCH_ID
-                  FROM ACCOUNTS
-                 WHERE CODE =  $P{AC_NO} )
-                  BRANCHID,
+               acc.BRANCH_ID BRANCHID,
+               br.bname BRNAME,
+               br.baddress BRADDRESS,
                (CASE
                    WHEN MAILING_ADDRESS = 'PRESENT_ADDRESS'
                    THEN
@@ -473,8 +478,8 @@ SELECT CUCODE,
                        'RECURRING_DEPOSIT', 'RECURRING DEPOSIT',
                        'FIXED_DEPOSIT', 'FIXED DEPOSIT',
                        'other')
-                  AS PRODUCTTYPE,P.NAME PRODUCT_NAME,
-                  
+                  AS PRODUCTTYPE,
+               P.NAME PRODUCT_NAME,
                OPENING_DATE AS OPENDATE,
                p.DESCRIPTION,
                LAST_CLIENT_TRANSACTION_DATE AS LASTTXNDATE,
@@ -483,14 +488,16 @@ SELECT CUCODE,
                           acc.PHONE_NUMBER || ', ')
                || acc.MOBILE_NUMBER
                   Phone,
-               acc.STATUS,CB.CURRENT_BALANCE balance
+               acc.STATUS,
+               CB.CURRENT_BALANCE balance
           FROM ACCOUNTS acc,
                CASA_BALANCES CB,
                PRODUCTS P,
                CIS_INDIVIDUAL_INFORMATION,
                CIS_SUBJECT,
-               cis_customer
-         WHERE     ACC.code =  $P{AC_NO}
+               cis_customer,
+               branch br
+         WHERE     ACC.code = $P{AC_NO}
                AND ACC.PRODUCT_ID = P.ID
                AND ACC.ID = CB.ACCOUNT_ID(+)
                AND ACC.CUSTOMER_ID = CIS_SUBJECT.CUS_ID(+)
@@ -498,8 +505,9 @@ SELECT CUCODE,
                AND CIS_CUSTOMER.CUSID = ACC.CUSTOMER_ID
                AND cis_customer.CUSTOMER_TYPE = 'INDIVIDUAL_JOINT'
                AND ROWNUM = 1
-               UNION
-               SELECT ACC.NAME AS cucode,
+               AND ACC.Branch_Id = br.bid(+)
+        UNION
+        SELECT ACC.NAME AS cucode,
                acc.CURRENCY_CODE,
                get_current_date curr_date,
                acc.country_id,
@@ -556,10 +564,9 @@ SELECT CUCODE,
                     WHERE ID = CIS_CUSTOMER.DISTRICT_ID)
                   cusaddress,
                acc.code acccode,
-               (SELECT BRANCH_ID
-                  FROM ACCOUNTS
-                 WHERE CODE =  $P{AC_NO} )
-                  BRANCHID,
+               acc.BRANCH_ID BRANCHID,
+               br.bname BRNAME,
+               br.baddress BRADDRESS,
                (CASE
                    WHEN MAILING_ADDRESS = 'BUSINESS_ADDRESS'
                    THEN
@@ -609,8 +616,8 @@ SELECT CUCODE,
                        'RECURRING_DEPOSIT', 'RECURRING DEPOSIT',
                        'FIXED_DEPOSIT', 'FIXED DEPOSIT',
                        'other')
-                  AS PRODUCTTYPE,P.NAME PRODUCT_NAME,
-                  
+                  AS PRODUCTTYPE,
+               P.NAME PRODUCT_NAME,
                OPENING_DATE AS OPENDATE,
                p.DESCRIPTION,
                LAST_CLIENT_TRANSACTION_DATE AS LASTTXNDATE,
@@ -619,20 +626,23 @@ SELECT CUCODE,
                           acc.PHONE_NUMBER || ', ')
                || acc.MOBILE_NUMBER
                   Phone,
-               acc.STATUS,CB.CURRENT_BALANCE balance
+               acc.STATUS,
+               CB.CURRENT_BALANCE balance
           FROM ACCOUNTS acc,
                CASA_BALANCES CB,
                PRODUCTS P,
                CIS_ORGANIZATIONS,
                CIS_SUBJECT,
-               CIS_CUSTOMER
-         WHERE     ACC.code =  $P{AC_NO}
+               CIS_CUSTOMER,
+               branch br
+         WHERE     ACC.code = $P{AC_NO}
                AND ACC.PRODUCT_ID = P.ID
                AND ACC.ID = CB.ACCOUNT_ID(+)
                AND ACC.CUSTOMER_ID = CIS_SUBJECT.CUS_ID(+)
                AND CIS_SUBJECT.SUBJECT_ID = CIS_ORGANIZATIONS.ID(+)
                AND CIS_CUSTOMER.CUSTOMER_TYPE = 'ORGANIZATION'
-               AND CIS_CUSTOMER.CUSID = ACC.CUSTOMER_ID)
+               AND CIS_CUSTOMER.CUSID = ACC.CUSTOMER_ID
+               AND ACC.Branch_Id = br.bid(+))
 WHERE UPPER(PRODUCTTYPE) = 'DEMAND DEPOSIT']]></query>
 	<field name="CUCODE" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="CUCODE"/>
@@ -646,11 +656,11 @@ WHERE UPPER(PRODUCTTYPE) = 'DEMAND DEPOSIT']]></query>
 		<property name="com.jaspersoft.studio.field.name" value="CURR_DATE"/>
 		<property name="com.jaspersoft.studio.field.label" value="CURR_DATE"/>
 	</field>
-	<field name="COUNTRY_ID" class="java.lang.Integer">
+	<field name="COUNTRY_ID" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.name" value="COUNTRY_ID"/>
 		<property name="com.jaspersoft.studio.field.label" value="COUNTRY_ID"/>
 	</field>
-	<field name="ACCID" class="java.lang.Integer">
+	<field name="ACCID" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.name" value="ACCID"/>
 		<property name="com.jaspersoft.studio.field.label" value="ACCID"/>
 	</field>
@@ -678,9 +688,17 @@ WHERE UPPER(PRODUCTTYPE) = 'DEMAND DEPOSIT']]></query>
 		<property name="com.jaspersoft.studio.field.name" value="ACCCODE"/>
 		<property name="com.jaspersoft.studio.field.label" value="ACCCODE"/>
 	</field>
-	<field name="BRANCHID" class="java.lang.Integer">
+	<field name="BRANCHID" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.name" value="BRANCHID"/>
 		<property name="com.jaspersoft.studio.field.label" value="BRANCHID"/>
+	</field>
+	<field name="BRNAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BRNAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="BRNAME"/>
+	</field>
+	<field name="BRADDRESS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BRADDRESS"/>
+		<property name="com.jaspersoft.studio.field.label" value="BRADDRESS"/>
 	</field>
 	<field name="ADDADDRESS1" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="ADDADDRESS1"/>
@@ -714,7 +732,7 @@ WHERE UPPER(PRODUCTTYPE) = 'DEMAND DEPOSIT']]></query>
 		<property name="com.jaspersoft.studio.field.name" value="STATUS"/>
 		<property name="com.jaspersoft.studio.field.label" value="STATUS"/>
 	</field>
-	<field name="BALANCE" class="java.lang.Double">
+	<field name="BALANCE" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.name" value="BALANCE"/>
 		<property name="com.jaspersoft.studio.field.label" value="BALANCE"/>
 	</field>
@@ -750,16 +768,7 @@ WHERE UPPER(PRODUCTTYPE) = 'DEMAND DEPOSIT']]></query>
 			<box leftPadding="0" rightPadding="0"/>
 		</element>
 		<element kind="textField" uuid="f6e20894-935f-4218-bac4-f186e24dd527" stretchType="ElementGroupHeight" x="65" y="122" width="155" height="43" fontName="Times New Roman" fontSize="8.0" textAdjust="StretchHeight" blankWhenNull="true" removeLineWhenBlank="true" printWhenDetailOverflows="true">
-			<expression><![CDATA[$F{ADDADDRESS1}.trim().isEmpty() || $F{ADDADDRESS1}.replaceAll("\\p{Punct}", "").trim().isEmpty() ? null :
-$F{ADDADDRESS1}
-    .replaceAll("^\\p{Punct}+", "") // Remove leading punctuation
-    .replaceAll(",{2,}", ",") // Replace multiple commas with a single comma
-    .replaceAll("(,\\s*)+", ", ") // Ensure single comma with following space
-    .replaceAll("\\s+,", ", ") // Ensure space after comma if it's missing
-    .replaceAll("[,\\.]+\\s*$", "") // Remove trailing commas and periods
-    .replaceAll("\\.{2,}", ".") // Replace multiple periods with a single period
-    .replaceAll("\\s{2,}", " ") // Replace multiple spaces with a single space
-    .trim(); // Final trim to clean up leading and trailing whitespace]]></expression>
+			<expression><![CDATA[$F{ADDRESS_LINE}==null?($F{CADD}==null?$F{ADDADDRESS1}:$F{CUSADDRESS}):$F{ACCADDRESS}]]></expression>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<box leftPadding="0" rightPadding="0"/>
 		</element>
@@ -853,7 +862,7 @@ $F{ADDADDRESS1}
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<box leftPadding="0" rightPadding="0"/>
 		</element>
-		<element kind="staticText" uuid="1fbc6b1f-1e01-4c91-a3b0-be21abc5444c" x="0" y="64" width="555" height="14" fontName="SansSerif" fontSize="10.0" bold="true" hTextAlign="Center">
+		<element kind="staticText" uuid="1fbc6b1f-1e01-4c91-a3b0-be21abc5444c" x="0" y="62" width="555" height="14" fontName="SansSerif" fontSize="10.0" bold="true" hTextAlign="Center">
 			<text><![CDATA[Account Statement]]></text>
 			<property name="com.jaspersoft.studio.unit.width" value="px"/>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -862,6 +871,22 @@ $F{ADDADDRESS1}
 			<expression><![CDATA["Print Date : "+DATEFORMAT(new java.util.Date(),"dd/MM/yyyy")]]></expression>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<property name="com.jaspersoft.studio.unit.y" value="px"/>
+		</element>
+		<element kind="textField" uuid="3106d972-9bdb-4817-bd73-495d98f27528" x="0" y="0" width="555" height="30" fontSize="16.0" bold="true" hTextAlign="Center">
+			<expression><![CDATA["IDLC Finance PLC"]]></expression>
+		</element>
+		<element kind="textField" uuid="436b12f6-18c8-45ca-98bd-f6606913cf24" x="0" y="21" width="555" height="20" markup="html" fontSize="11.0" hTextAlign="Center" vTextAlign="Middle" style="Table_TD">
+			<paragraph lineSpacingSize="0.5" style="Table_TD"/>
+			<expression><![CDATA[$F{BRNAME}]]></expression>
+			<box style="Table_TD">
+				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+			</box>
+		</element>
+		<element kind="textField" uuid="d8b93723-62cc-4332-ae53-ccf44e91753d" x="0" y="38" width="555" height="20" fontSize="11.0" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA[$F{BRADDRESS}]]></expression>
 		</element>
 		<property name="com.jaspersoft.studio.unit.height" value="px"/>
 	</pageHeader>
@@ -1130,26 +1155,23 @@ $F{ADDADDRESS1}
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 		</band>
-		<band height="36">
-			<element kind="staticText" uuid="467647d9-54a4-4ee8-9ca8-47cd6b576245" x="0" y="9" width="555" height="27" fontName="SansSerif" fontSize="8.0" bold="false" hTextAlign="Left" vTextAlign="Middle">
-				<text><![CDATA[Note: This is a computer generated statement and does not require any signature.]]></text>
-				<box leftPadding="16"/>
-			</element>
-		</band>
 	</detail>
-	<pageFooter height="46" splitType="Stretch">
-		<element kind="staticText" uuid="426f4df0-4fd5-489b-8030-191c671e21cf" positionType="FixRelativeToBottom" x="0" y="8" width="555" height="16" forecolor="#5E5D5C" fontSize="8.0" printWhenDetailOverflows="true" hTextAlign="Center" vTextAlign="Middle">
+	<pageFooter height="80" splitType="Stretch">
+		<element kind="staticText" uuid="426f4df0-4fd5-489b-8030-191c671e21cf" positionType="FixRelativeToBottom" x="0" y="38" width="555" height="16" forecolor="#5E5D5C" fontSize="8.0" printWhenDetailOverflows="true" hTextAlign="Center">
 			<text><![CDATA[101 : Cash Credit, 102 : Transfer Credit, 103: Clearing Credit, 201 : Cash Debit, 202 : Transfer Debit, 203: Clearing Debit
 ]]></text>
 		</element>
-		<element kind="textField" uuid="9768f328-b8f1-4794-b767-04d944f85252" x="478" y="30" width="48" height="16" forecolor="#5C5C5C" fontName="SansSerif" fontSize="8.0" hTextAlign="Right" vTextAlign="Middle">
+		<element kind="staticText" uuid="bbd0372a-418d-4faf-8911-4e9334de2396" x="395" y="8" width="152" height="27" fontSize="8.0" bold="false" hTextAlign="Center">
+			<text><![CDATA[______________________
+Authorized Signature]]></text>
+		</element>
+		<element kind="textField" uuid="9768f328-b8f1-4794-b767-04d944f85252" x="478" y="60" width="48" height="14" forecolor="#5C5C5C" fontSize="8.0" hTextAlign="Right">
 			<expression><![CDATA["Page " + $V{PAGE_NUMBER}]]></expression>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<property name="com.jaspersoft.studio.unit.y" value="px"/>
 		</element>
-		<element kind="textField" uuid="2c8bfca5-be54-4e32-a212-7c0ba173b16d" x="526" y="30" width="38" height="16" forecolor="#5C5C5C" fontName="SansSerif" fontSize="8.0" evaluationTime="Report" hTextAlign="Left" vTextAlign="Middle">
+		<element kind="textField" uuid="2c8bfca5-be54-4e32-a212-7c0ba173b16d" x="531" y="60" width="38" height="14" forecolor="#5C5C5C" fontSize="8.0" evaluationTime="Report" hTextAlign="Left">
 			<expression><![CDATA[" of " + $V{PAGE_NUMBER}]]></expression>
-			<property name="com.jaspersoft.studio.unit.y" value="px"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 		</element>
 		<property name="com.jaspersoft.studio.unit.height" value="px"/>
 	</pageFooter>

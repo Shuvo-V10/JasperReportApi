@@ -893,7 +893,7 @@ WHERE UPPER(PRODUCTTYPE) != 'DEMAND DEPOSIT']]></query>
 			<text><![CDATA[A/C Status :]]></text>
 			<box leftPadding="0" rightPadding="0"/>
 		</element>
-		<element kind="textField" uuid="6f815c4d-140c-474f-8e4a-d3655ffa7b1e" stretchType="ElementGroupHeight" x="85" y="134" width="175" height="52" fontName="SansSerif" fontSize="8.0" textAdjust="StretchHeight" blankWhenNull="true" printWhenDetailOverflows="true" removeLineWhenBlank="true">
+		<element kind="textField" uuid="6f815c4d-140c-474f-8e4a-d3655ffa7b1e" stretchType="ElementGroupHeight" x="85" y="134" width="175" height="52" fontName="SansSerif" fontSize="8.0" textAdjust="StretchHeight" blankWhenNull="true" removeLineWhenBlank="true" printWhenDetailOverflows="true">
 			<expression><![CDATA[PROPER($F{ADDRESS_LINE})==null?(PROPER($F{CADD})==null?PROPER($F{ADDADDRESS1}):PROPER( $F{CUSADDRESS})):PROPER($F{ACCADDRESS})]]></expression>
 			<box leftPadding="0" rightPadding="0"/>
 		</element>
@@ -978,7 +978,7 @@ WHERE UPPER(PRODUCTTYPE) != 'DEMAND DEPOSIT']]></query>
 			<box leftPadding="0" rightPadding="0"/>
 		</element>
 		<element kind="textField" uuid="d0629ac5-81b0-4707-8b42-4c26fff8a9f2" x="0" y="21" width="655" height="20" markup="html" fontSize="11.0" hTextAlign="Center" style="Table_TD">
-			<paragraph lineSpacingSize="0.5" style="Table_TD"/>
+			<paragraph lineSpacingSize="0.5"/>
 			<expression><![CDATA[$F{BRNAME}]]></expression>
 			<box style="Table_TD">
 				<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -988,7 +988,7 @@ WHERE UPPER(PRODUCTTYPE) != 'DEMAND DEPOSIT']]></query>
 			</box>
 		</element>
 		<element kind="textField" uuid="8c474614-c87d-428d-aba0-e8e8739d5d51" x="0" y="0" width="654" height="30" fontSize="16.0" bold="true" hTextAlign="Center">
-			<expression><![CDATA["IDLC Finance Limited"]]></expression>
+			<expression><![CDATA["IDLC Finance PLC"]]></expression>
 		</element>
 		<element kind="textField" uuid="95b6d2ce-eb3f-4c28-9871-126b9c080601" x="0" y="38" width="654" height="20" fontSize="11.0" hTextAlign="Center">
 			<expression><![CDATA[$F{BRADDRESS}]]></expression>
